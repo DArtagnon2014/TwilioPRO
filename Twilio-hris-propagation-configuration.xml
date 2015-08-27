@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hris-propagations PUBLIC "-//SuccessFactors, Inc.//DTD HRIS Propagation Configuration//EN" "http://svn/viewvc/svn/V4trunk/src/com/sf/dtd/hris-propagation-configuration.dtd">
+<hris-propagations>
+    <propagate foundation-element-id="location">
+        <field id="timezone">
+            <destination field-id="timezone" hris-element-id="jobInfo"/>
+        </field>
+        <field id="standardHours">
+            <destination field-id="standard-hours" hris-element-id="jobInfo"/>
+        </field> 	    	    
+    </propagate>
+    <propagate foundation-element-id="LegalEntity">
+        <field id="defaultLocation">
+            <destination field-id="location" hris-element-id="jobInfo"/>
+        </field>	
+        <field id="countryOfRegistration"> 
+            <destination field-id="country-of-company" hris-element-id="jobInfo"/> 
+        </field> 
+        <!--<field id="defaultPayGroup">
+            <destination hris-element-id="compInfo" field-id="pay-group"></destination>
+            </field>-->
+    </propagate>
+    <propagate foundation-element-id="jobCode">
+        <!-- Fields Specific to USA only -->
+        <field country="USA" id="jobClassLocal.custom-string2">
+            <destination field-id="eeo1-job-category" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.custom-string3">
+            <destination field-id="eeo-class" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.genericNumber6">
+            <destination field-id="flsa-status" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.custom-long2">
+            <destination field-id="custom-long4" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.custom-long5">
+            <destination field-id="shift-factor" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.genericNumber1">
+            <destination field-id="eeo1-job-category" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.genericNumber2">
+            <destination field-id="eeo4-job-category" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.genericNumber3">
+            <destination field-id="eeo5-job-category" hris-element-id="jobInfo"/>
+        </field>
+        <field country="USA" id="jobClassLocal.genericNumber4">
+            <destination field-id="eeo6-job-category" hris-element-id="jobInfo"/>
+        </field>
+        
+        <!-- Fields Specific to DEU only -->
+        <field country="DEU" id="jobClassLocal.custom-string8">
+            <destination field-id="custom-string1" hris-element-id="jobInfo"/>
+        </field>
+        <!-- Fields Specific to USA, CAN, AUS, BRA, GBR, RUS, IRL, SAU only -->
+        <field country="USA" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="CAN" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="AUS" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="BRA" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="GBR" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="RUS" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="IRL" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <field country="SAU" id="jobClassLocal.custom-long4">
+            <destination field-id="shift-code" hris-element-id="jobInfo"/>
+        </field>
+        <!-- Fields used in all Countries but specific to each Country -->
+        <field id="jobClassLocal.custom-string1">
+            <destination field-id="local-job-title" hris-element-id="jobInfo"/>
+        </field>
+        <field id="jobClassLocal.custom-string5">
+            <destination field-id="standard-hours" hris-element-id="jobInfo"/>
+        </field>
+        <field id="jobClassLocal.custom-long1">
+            <destination field-id="custom-long2" hris-element-id="jobInfo"/>
+        </field>
+        <field id="jobClassLocal.custom-long3">
+            <destination field-id="custom-long15" hris-element-id="jobInfo"/>
+        </field>
+<!--
+        <field id="custom-string1"> <!- Twilio Title->
+            <destination field-id="job-title" hris-element-id="jobInfo"/>
+        </field>	-->
+<!--        <field id="jobLevel"> <!-\-Job Level-\->
+            <destination hris-element-id="jobInfo" field-id="custom-string2"></destination>
+        </field>-->
+        <field id="grade"> <!--Pay Grade-->
+            <destination field-id="pay-grade" hris-element-id="jobInfo"/>
+        </field>
+        
+        
+        <field id="custom-string6"> <!--Twilio Job Function-->
+            <destination field-id="custom-string6" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-string7"> <!--Twilio Job Family-->
+            <destination field-id="custom-string5" hris-element-id="jobInfo"/>
+        </field>
+        <field id="name"> <!-- Job (Radford) Title-->
+            <destination field-id="radford-jobcode" hris-element-id="jobInfo"/>
+        </field>
+        <field id="description"> <!--Radford Job Description-->
+            <destination field-id="notes" hris-element-id="jobInfo"/>
+        </field>
+        <field id="jobLevel"> <!--Radford Job Level-->
+            <destination field-id="custom-string2" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-string10"> <!--Global Grade-->
+            <destination field-id="custom-string10" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-string2"> <!--Management Class-->
+            <destination field-id="custom-string7" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-string3"> <!--Technical Indicator-->
+            <destination field-id="custom-string8" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-string4"> <!--Levelling Indicator-->
+            <destination field-id="custom-string9" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-string8"> <!--Pay Range-->
+            <destination field-id="custom-string11" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-double1"> <!--Min-->
+            <destination field-id="custom-double1" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-double2"> <!--1st Quartile-->
+            <destination field-id="custom-double2" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-double3"> <!--Mid-->
+            <destination field-id="custom-double3" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-double4"> <!--2nd Quartile-->
+            <destination field-id="custom-double4" hris-element-id="jobInfo"/>
+        </field>
+        <field id="custom-double5"> <!--Max-->
+            <destination field-id="custom-double5" hris-element-id="jobInfo"/>
+        </field>
+<!--        <field id="workerCompCode">
+            <destination hris-element-id="jobInfo" field-id="custom-string8"></destination>
+        </field>-->
+        <field id="isRegular">
+            <destination field-id="regular-temp" hris-element-id="jobInfo"/>
+        </field>
+        <field id="standardHours">
+            <destination field-id="standard-hours" hris-element-id="jobInfo"/>
+        </field>         
+    </propagate>
+    
+    <!--Pay Component type, Pay Component value, Currency, Frequency Code propagating from Pay Component 
+        to Pay Component Recurring; Currency also propagating to Pay Component Non Recurring -->
+    <propagate foundation-element-id="payComponent">  
+        <field id="currency">
+            <destination field-id="currency-code" hris-element-id="payComponentRecurring"/>
+            <destination field-id="currency-code" hris-element-id="payComponentNonRecurring"/>
+        </field> 
+        <field id="payComponentType">
+            <destination field-id="pay-component-type" hris-element-id="payComponentRecurring"/>
+        </field>
+        <field id="payComponentValue">
+            <destination field-id="paycompvalue" hris-element-id="payComponentRecurring"/>
+        </field> 
+        <field id="frequencyCode">
+            <destination field-id="frequency" hris-element-id="payComponentRecurring"/>
+        </field>     
+    </propagate>
+    
+    <propagation-mapping foundation-field="LegalEntity.externalCode" hris-field="jobInfo.company"/>
+    <propagation-mapping foundation-field="location.externalCode" hris-field="jobInfo.location"/>
+    <propagation-mapping foundation-field="jobCode.externalCode" hris-field="jobInfo.job-code"/>
+    <propagation-mapping foundation-field="payComponent.externalCode" hris-field="payComponentRecurring.pay-component"/>
+    <propagation-mapping foundation-field="payComponent.externalCode" hris-field="payComponentNonRecurring.pay-component-code"/> 
+    
+</hris-propagations>
