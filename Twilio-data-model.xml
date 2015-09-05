@@ -13141,6 +13141,8 @@
     <label xml:lang="zh-CN">个人信息</label>
     <label xml:lang="zh-TW">傳記資訊</label>
     <label xml:lang="en-US">Biographical Information</label>
+    <trigger-rule event="onSave" rule="ADP_ID_Creation"/>
+    <trigger-rule event="onSave" rule="ADP_Gender"/>
     <hris-field max-length="32" id="person-id-external" visibility="view" allow-import="true">
       <label>EC ID</label>
       <label xml:lang="ar-SA">معرّف الشخص</label>
@@ -13438,6 +13440,15 @@
       <label xml:lang="zh-TW">死亡日期</label>
       <label xml:lang="en-US">Date of Death</label>
     </hris-field>
+    <hris-field max-length="256" id="custom-string2" visibility="view">
+      <label xml:lang="en-US">ADP ID</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string3" visibility="view">
+      <label xml:lang="en-US">HelpVar</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string4" visibility="view">
+      <label xml:lang="en-US">ADP Gender</label>
+    </hris-field>
   </hris-element>
   <hris-element id="personalInfo">
     <label>Personal Information</label>
@@ -13480,6 +13491,8 @@
     <label xml:lang="zh-CN">个人信息</label>
     <label xml:lang="zh-TW">個人資訊</label>
     <label xml:lang="en-US">Personal Information</label>
+    <trigger-rule event="onSave" rule="ADP_F_Marital"/>
+    <trigger-rule event="onSave" rule="ADP_S_Marital"/>
     <hris-field max-length="128" id="first-name" visibility="both" required="true">
       <label>First Name</label>
       <label xml:lang="ar-SA">الاسم الأول</label>
@@ -15135,6 +15148,12 @@
       <label xml:lang="en-US">Federal Marital Status</label>
       <picklist id="FederalMaritalStatus"/>
     </hris-field>
+    <hris-field max-length="256" id="custom-string5" visibility="view">
+      <label xml:lang="en-US">ADP State Marital Status</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string6" visibility="view">
+      <label xml:lang="en-US">ADP Federal Marital Status</label>
+    </hris-field>
   </hris-element>
   <hris-element id="globalInfo">
     <label>Global Information</label>
@@ -15427,6 +15446,7 @@
     <label xml:lang="vi-VN">Địa chỉ nhà</label>
     <label xml:lang="zh-CN">住宅地址</label>
     <label xml:lang="zh-TW">住宅地址</label>
+    <label xml:lang="en-US">Home Address</label>
     <hris-field max-length="256" id="custom-string1-alt1" visibility="both">
       <label>Custom String 1 in Language 1</label>
       <label xml:lang="ar-SA">السلسلة المخصصة 1 باللغة 1</label>
@@ -15467,6 +15487,7 @@
       <label xml:lang="vi-VN">Chuỗi tùy chọn 1 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义字符串 1（语言 1）</label>
       <label xml:lang="zh-TW">自訂字串 1 (語言1)</label>
+      <label xml:lang="en-US">Custom String 1 in Language 1</label>
     </hris-field>
     <hris-field id="custom-date1-alt1" visibility="both">
       <label>Custom Date 1 in Language 1</label>
@@ -15508,6 +15529,7 @@
       <label xml:lang="vi-VN">Ngày tùy chọn 1 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义日期 1（语言 1）</label>
       <label xml:lang="zh-TW">自訂日期 1 (語言1)</label>
+      <label xml:lang="en-US">Custom Date 1 in Language 1</label>
     </hris-field>
     <hris-field id="custom-long1-alt1" visibility="both">
       <label>Custom Number 1 in Language 1</label>
@@ -15549,6 +15571,7 @@
       <label xml:lang="vi-VN">Số tùy chọn 1 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义数值 1（语言 1）</label>
       <label xml:lang="zh-TW">自訂號碼 1 (語言1)</label>
+      <label xml:lang="en-US">Custom Number 1 in Language 1</label>
     </hris-field>
     <hris-field id="custom-double1-alt1" visibility="both">
       <label>Custom Decimal 1 in Language 1</label>
@@ -15590,6 +15613,7 @@
       <label xml:lang="vi-VN">Thập phân tùy chọn 1 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义小数 1（语言 1）</label>
       <label xml:lang="zh-TW">自訂小數 1 (語言1)</label>
+      <label xml:lang="en-US">Custom Decimal 1 in Language 1</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string1-alt2" visibility="both">
       <label>Custom String 1 in Language 2</label>
@@ -15631,6 +15655,7 @@
       <label xml:lang="vi-VN">Chuỗi tùy chọn 2 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义字符串 1（语言 2）</label>
       <label xml:lang="zh-TW">自訂字串 2 (語言1)</label>
+      <label xml:lang="en-US">Custom String 1 in Language 2</label>
     </hris-field>
     <hris-field id="custom-date1-alt2" visibility="both">
       <label>Custom Date 1 in Language 2</label>
@@ -15672,6 +15697,7 @@
       <label xml:lang="vi-VN">Ngày tùy chọn 2 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义日期 1（语言 2）</label>
       <label xml:lang="zh-TW">自訂日期 2 (語言1)</label>
+      <label xml:lang="en-US">Custom Date 1 in Language 2</label>
     </hris-field>
     <hris-field id="custom-long1-alt2" visibility="both">
       <label>Custom Number 1 in Language 2</label>
@@ -15713,6 +15739,7 @@
       <label xml:lang="vi-VN">Số tùy chọn 2 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义数值 1（语言 2）</label>
       <label xml:lang="zh-TW">自訂號碼 2 (語言1)</label>
+      <label xml:lang="en-US">Custom Number 1 in Language 2</label>
     </hris-field>
     <hris-field id="custom-double1-alt2" visibility="both">
       <label>Custom Decimal 1 in Language 2</label>
@@ -15754,6 +15781,7 @@
       <label xml:lang="vi-VN">Thập phân tùy chọn 2 trong ngôn ngữ 1</label>
       <label xml:lang="zh-CN">自定义小数 1（语言 2）</label>
       <label xml:lang="zh-TW">自訂小數 2 (語言1)</label>
+      <label xml:lang="en-US">Custom Decimal 1 in Language 2</label>
     </hris-field>
   </hris-element>
   <hris-element id="phoneInfo">
@@ -18588,11 +18616,11 @@
     </hris-section>
     <hris-section id="jobFieldsList">
       <label>Job Information</label>
-      <hris-field max-length="128" id="change-reason" visibility="both">
-        <label>Job Info Event Reason</label>
+      <hris-field max-length="128" id="change-reason" visibility="none">
+        <label>Event Reason</label>
       </hris-field>
-      <hris-field max-length="128" id="change-reason-external" visibility="both">
-        <label>Job Info Event Reason External</label>
+      <hris-field max-length="128" id="change-reason-external" visibility="none">
+        <label>Event Reason External</label>
       </hris-field>
       <hris-field max-length="256" id="manager-id" visibility="both">
         <label>Supervisor</label>
@@ -19992,7 +20020,35 @@
     <label xml:lang="zh-CN">薪酬信息</label>
     <label xml:lang="zh-TW">薪酬資訊</label>
     <label xml:lang="en-US">Compensation Information</label>
-	 <trigger-rule event="onView" rule="COMPA"/>
+    <trigger-rule event="onView" rule="COMPA"/>
+    <trigger-rule event="onSave" rule="ADP_Hire_Rehire_YN"/>
+    <trigger-rule event="onSave" rule="ADP_PositionUsesTime"/>
+    <trigger-rule event="onSave" rule="ADP_email_Notification"/>
+    <trigger-rule event="onSave" rule="ADP_BenefitsCode"/>
+    <trigger-rule event="onSave" rule="ADP_ADMINFLAG"/>
+    <trigger-rule event="onSave" rule="ADP_SUPERVISORFLAG"/>
+    <trigger-rule event="onSave" rule="ADP_TIMEZONE"/>
+    <trigger-rule event="onSave" rule="ADP_TRANSFERTOPAYROLL"/>
+    <trigger-rule event="onSave" rule="ADP_BADGE"/>
+    <trigger-rule event="onSave" rule="ADP_PAYCLASS"/>
+    <trigger-rule event="onSave" rule="ADP_SUPERVISORID"/>
+    <trigger-rule event="onSave" rule="ADP_Emp_Status1"/>
+    <trigger-rule event="onSave" rule="ADP_Emp_Type1"/>
+    <trigger-rule event="onSave" rule="ADP_Job_Location"/>
+    <trigger-rule event="onSave" rule="ADP_Department"/>
+    <trigger-rule event="onSave" rule="ADP_Business_Unit"/>
+    <trigger-rule event="onSave" rule="ADP_FLSA_CODE"/>
+    <trigger-rule event="onSave" rule="ADP_PAY_FREQ"/>
+    <trigger-rule event="onSave" rule="ADP_RATE_TYPE"/>
+    <trigger-rule event="onSave" rule="ADP_RATE_AMOUNT"/>
+    <trigger-rule event="onSave" rule="ADP_STD_HOURS"/>
+    <trigger-rule event="onSave" rule="ADP_MANAGEMENT_POS"/>
+    <trigger-rule event="onSave" rule="ADP_LEGAL_ADDRESS"/>
+    <trigger-rule event="onSave" rule="ADP_ELG_REHIRE"/>
+    <trigger-rule event="onSave" rule="ADP_REHIRE_STATUS"/>
+    <trigger-rule event="onSave" rule="ADP_CACL_AUTO_PAY"/>
+    <trigger-rule event="onSave" rule="ADP_TERMINATION_REASON"/>
+    <trigger-rule event="onSave" rule="ADP_Job_Title"/>
     <hris-field id="salary" visibility="none">
       <label>Salary</label>
       <label xml:lang="ar-SA">الراتب</label>
@@ -20576,7 +20632,7 @@
       <label xml:lang="zh-TW">福利比率</label>
       <label xml:lang="en-US">Benefits Rate</label>
     </hris-field>
-    <hris-field id="compa-ratio" visibility="view" maximumFractionDigits="2">
+    <hris-field id="compa-ratio" visibility="both" maximumFractionDigits="2">
       <label>Compa Ratio</label>
       <label xml:lang="ar-SA">الوضع النسبي</label>
       <label xml:lang="bg-BG">Сравнително съотношение</label>
@@ -20969,7 +21025,99 @@
     <hris-field max-length="256" id="custom-double5" visibility="both">
       <label xml:lang="en-US">Compa Ratio NEW</label>
     </hris-field>
-	 
+    <hris-field max-length="256" id="custom-string1" visibility="view">
+      <label xml:lang="en-US">IsPaidByWFN</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string2" visibility="view">
+      <label xml:lang="en-US">PositionUsesTime</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string3" visibility="view">
+      <label xml:lang="en-US">ADP Notification</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string4" visibility="view">
+      <label xml:lang="en-US">Benefits Eligibility Class</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string5" visibility="view">
+      <label xml:lang="en-US">ADMINFLAG</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string6" visibility="view">
+      <label xml:lang="en-US">SUPERVISORFLAG</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string7" visibility="view">
+      <label xml:lang="en-US">TIMEZONE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string8" visibility="view">
+      <label xml:lang="en-US">TRANSFERTOPAYROLL</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string9" visibility="view">
+      <label xml:lang="en-US">BADGE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string10" visibility="view">
+      <label xml:lang="en-US">PAYCLASS</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string11" visibility="view">
+      <label xml:lang="en-US">SUPERVISORID</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string12" visibility="view">
+      <label xml:lang="en-US">ADP Emp Status</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string13" visibility="view">
+      <label xml:lang="en-US">ADP Emp Type</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string14" visibility="view">
+      <label xml:lang="en-US">ADP Job Location</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string15" visibility="view">
+      <label xml:lang="en-US">ADP Department</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string16" visibility="view">
+      <label xml:lang="en-US">ADP SUI Tax Code</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string17" visibility="view">
+      <label xml:lang="en-US">ADP Worked State Field</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string18" visibility="view">
+      <label xml:lang="en-US">ADP Business Unit</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string19" visibility="view">
+      <label xml:lang="en-US">ADP FLSA CODE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string20" visibility="view">
+      <label xml:lang="en-US">ADP PAY FREQ CODE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string21" visibility="view">
+      <label xml:lang="en-US">ADP RATE TYPE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-double6" visibility="view" maximumFractionDigits="4">
+      <label xml:lang="en-US">ADP RATE AMOUNT</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string23" visibility="view">
+      <label xml:lang="en-US">ADP STD HOURS</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string24" visibility="view">
+      <label xml:lang="en-US">ADP MANAGEMENT POS</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string25" visibility="view">
+      <label xml:lang="en-US">ADP TERMINATION RSN</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string26" visibility="view">
+      <label xml:lang="en-US">ADP CANCEL AUT PAY</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string27" visibility="view">
+      <label xml:lang="en-US">ADP ELIGIBLE REHIRE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string28" visibility="view">
+      <label xml:lang="en-US">ADP REHIRE STS</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string31" visibility="view">
+      <label xml:lang="en-US">ADP ADDRESS LEGAL</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string34" visibility="view">
+      <label xml:lang="en-US">ADP JOB TITLE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string35" visibility="view">
+      <label xml:lang="en-US">Cust Emp Status</label>
+    </hris-field>
   </hris-element>
   <hris-element id="payComponentRecurring">
     <label>Compensation</label>
