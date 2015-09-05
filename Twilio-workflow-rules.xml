@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset version="1.0">
+	<rule id="rule0">
+<!--Hire / Rehire-->
+		<trueoutput>SYS</trueoutput>
+		<conditions>
+			<or>    
+				<equal id="jobInfo.event" value="H" compareToNew="true"/>
+				<equal id="jobInfo.event" value="R" compareToNew="true"/>
+			</or>
+		</conditions>
+	</rule>
+	
+<rule id="rule-1">
+	<trueoutput>MGT</trueoutput>
+	<conditions>
+		<or>
+			<equal id="jobInfo.event-reason" value="JOB" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="ADJ" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="DEM" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="CHG" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="DM" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="GI" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="JD" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="MI" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="PRM" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="RCL" compareToNew="true"/>
+			<equal id="jobInfo.event-reason" value="TTL" compareToNew="true"/>
+			<equal id="jobInfo.event" value="SPOT" compareToNew="true"/>
+		</or>
+	</conditions>
+</rule> 
+	
+	<rule id="rule-2">
+		<trueoutput>SYS</trueoutput>
+		<conditions>
+			<and>
+				<equal id="jobInfo.event" value="8" compareToNew="true"/>
+			</and>
+		</conditions>
+	</rule>
+	
+<rule id="rule-3">
+	<trueoutput>TRANSFER</trueoutput>
+	<conditions>
+		<and>
+			<equal id="jobInfo.event" value="10" compareToNew="true"/>
+		</and>
+	</conditions>
+</rule> 
+	
+	
+<rule id="rule-4">
+<!--Event = Base Pay Change -->
+	<trueoutput>TRANSFER2</trueoutput>
+		<conditions>
+		  <or>
+		  	<equal id="jobInfo.event" value="12" compareToNew="true"/>
+		  	<equal id="compInfo.event" value="12" compareToNew="true"/>
+		  </or>
+		</conditions>	
+</rule>
+	
+	<rule id="rule-5">
+		<!--Event = Job Change -->
+		<trueoutput>TERM</trueoutput>
+		<conditions>
+			<and>
+				<equal id="jobInfo.event" value="16" compareToNew="true"/>
+			</and>
+		</conditions>
+	</rule>
+	
+	<rule id="rule-6">
+		<trueoutput>HR Notify</trueoutput>
+		<conditions>
+			<or>
+				<equal id="homeAddress.county.home" inverse="true"/>
+				<equal id="homeAddress.address1.home" inverse="true"/>
+				<equal id="homeAddress.address2.home" inverse="true"/>
+				<equal id="homeAddress.city.home" inverse="true"/>
+				<equal id="homeAddress.state.home" inverse="true"/>
+				<equal id="homeAddress.zip-code.home" inverse="true"/>
+			</or>
+		</conditions>
+	</rule>
+	
+	
+
+</ruleset>
