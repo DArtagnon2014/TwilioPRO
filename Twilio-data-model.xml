@@ -103,7 +103,7 @@
     <label xml:lang="fi-FI">Sähköposti</label>
     <label xml:lang="fr-CA">Courriel</label>
     <label xml:lang="fr-FR">E-mail</label>
-    <label xml:lang="he-IL">דוא"ל</label>
+    <label xml:lang="he-IL">דוא&quot;ל</label>
     <label xml:lang="hi-IN">ईमेल</label>
     <label xml:lang="hr-HR">E-pošta</label>
     <label xml:lang="hu-HU">E-mail</label>
@@ -4362,7 +4362,7 @@
     <label xml:lang="pt-BR">Status da licença</label>
     <label xml:lang="pt-PT">Status Em licença</label>
     <label xml:lang="ro-RO">Stare În concediu</label>
-    <label xml:lang="ru-RU">Статус "В отпуске"</label>
+    <label xml:lang="ru-RU">Статус &quot;В отпуске&quot;</label>
     <label xml:lang="sk-SK">Stav Na dovolenke</label>
     <label xml:lang="sl-SI">Status na dopustu</label>
     <label xml:lang="sr-RS">Status Na odsustvu</label>
@@ -13142,7 +13142,6 @@
     <label xml:lang="zh-TW">傳記資訊</label>
     <label xml:lang="en-US">Biographical Information</label>
     <trigger-rule event="onSave" rule="ADP_ID_Creation"/>
-    <trigger-rule event="onSave" rule="ADP_Gender"/>
     <hris-field max-length="32" id="person-id-external" visibility="view" allow-import="true">
       <label>EC ID</label>
       <label xml:lang="ar-SA">معرّف الشخص</label>
@@ -13446,9 +13445,6 @@
     <hris-field max-length="256" id="custom-string3" visibility="view">
       <label xml:lang="en-US">HelpVar</label>
     </hris-field>
-    <hris-field max-length="256" id="custom-string4" visibility="view">
-      <label xml:lang="en-US">ADP Gender</label>
-    </hris-field>
   </hris-element>
   <hris-element id="personalInfo">
     <label>Personal Information</label>
@@ -13493,6 +13489,7 @@
     <label xml:lang="en-US">Personal Information</label>
     <trigger-rule event="onSave" rule="ADP_F_Marital"/>
     <trigger-rule event="onSave" rule="ADP_S_Marital"/>
+    <trigger-rule event="onSave" rule="ADP_Gender"/>
     <hris-field max-length="128" id="first-name" visibility="both" required="true">
       <label>First Name</label>
       <label xml:lang="ar-SA">الاسم الأول</label>
@@ -15154,6 +15151,9 @@
     <hris-field max-length="256" id="custom-string6" visibility="view">
       <label xml:lang="en-US">ADP Federal Marital Status</label>
     </hris-field>
+    <hris-field max-length="256" id="custom-string7" visibility="view">
+      <label xml:lang="en-US">ADP Gender 3</label>
+    </hris-field>
   </hris-element>
   <hris-element id="globalInfo">
     <label>Global Information</label>
@@ -16089,7 +16089,7 @@
     <label xml:lang="fi-FI">Sähköpostitiedot</label>
     <label xml:lang="fr-CA">Informations sur le courriel</label>
     <label xml:lang="fr-FR">Informations sur l’e-mail</label>
-    <label xml:lang="he-IL">פרטי דוא"ל</label>
+    <label xml:lang="he-IL">פרטי דוא&quot;ל</label>
     <label xml:lang="hi-IN">ईमेल जानकारी</label>
     <label xml:lang="hr-HR">Podaci o e-pošti</label>
     <label xml:lang="hu-HU">E-mail adatok</label>
@@ -16129,7 +16129,7 @@
       <label xml:lang="fi-FI">Sähköpostin tyyppi</label>
       <label xml:lang="fr-CA">Type de courriel</label>
       <label xml:lang="fr-FR">Type d’e-mail</label>
-      <label xml:lang="he-IL">סוג דוא"ל</label>
+      <label xml:lang="he-IL">סוג דוא&quot;ל</label>
       <label xml:lang="hi-IN">ईमेल प्रकार</label>
       <label xml:lang="hr-HR">Vrsta e-pošte</label>
       <label xml:lang="hu-HU">E-mail típusa</label>
@@ -16171,7 +16171,7 @@
       <label xml:lang="fi-FI">Sähköpostiosoite</label>
       <label xml:lang="fr-CA">Adresse de courriel</label>
       <label xml:lang="fr-FR">E-mail</label>
-      <label xml:lang="he-IL">כתובת דוא"ל</label>
+      <label xml:lang="he-IL">כתובת דוא&quot;ל</label>
       <label xml:lang="hi-IN">ईमेल पता</label>
       <label xml:lang="hr-HR">Adresa e-pošte</label>
       <label xml:lang="hu-HU">E-mail cím</label>
@@ -16842,7 +16842,7 @@
       <label xml:lang="fi-FI">Sähköposti</label>
       <label xml:lang="fr-CA">Courriel</label>
       <label xml:lang="fr-FR">E-mail</label>
-      <label xml:lang="he-IL">דוא"ל</label>
+      <label xml:lang="he-IL">דוא&quot;ל</label>
       <label xml:lang="hi-IN">ईमेल</label>
       <label xml:lang="hr-HR">e-pošta</label>
       <label xml:lang="hu-HU">E-mail</label>
@@ -18102,6 +18102,26 @@
     <label xml:lang="zh-CN">职务信息</label>
     <label xml:lang="zh-TW">職位資訊</label>
     <label xml:lang="en-US">Job Information</label>
+    <trigger-rule event="onSave" rule="ADP_FLSA"/>
+    <trigger-rule event="onSave" rule="ADP_Legal_Address"/>
+    <trigger-rule event="onSave" rule="ADP_Hire_Rehire_YN"/>
+    <trigger-rule event="onSave" rule="ADP_Emp_Type2"/>
+    <trigger-rule event="onSave" rule="ADP_Emp_Status2"/>
+    <trigger-rule event="onSave" rule="ADP_Job_Location2"/>
+    <trigger-rule event="onSave" rule="ADP_Department2"/>
+    <trigger-rule event="onSave" rule="ADP_SUI_Code2"/>
+    <trigger-rule event="onSave" rule="ADP_Business_Unit2"/>
+    <trigger-rule event="onSave" rule="ADP_Eligible_Rehire2"/>
+    <trigger-rule event="onSave" rule="ADP_Cancle_aut_pay"/>
+    <trigger-rule event="onSave" rule="ADP_Term_reasonYN"/>
+    <trigger-rule event="onSave" rule="ADP_Benefits_Code2"/>
+    <trigger-rule event="onSave" rule="ADP_ELG_REHIRE"/>
+    <trigger-rule event="onSave" rule="ADP_Email_Notification"/>
+    <trigger-rule event="onSave" rule="ADP_JobTitle"/>
+    <trigger-rule event="onSave" rule="ADP_Rehire_Status2"/>
+    <trigger-rule event="onSave" rule="ADP_Work_State2"/>
+    <trigger-rule event="onSave" rule="ADP_Cancel_Auto_Pay2"/>
+    <trigger-rule event="onSave" rule="ADP_Manager"/>
     <hris-section id="positionInfoList">
       <label>Position Information</label>
       <label xml:lang="ar-SA">معلومات المنصب</label>
@@ -18624,44 +18644,6 @@
       </hris-field>
       <hris-field max-length="256" id="manager-id" visibility="both">
         <label>Supervisor</label>
-        <label xml:lang="ar-SA">المشرف</label>
-        <label xml:lang="bg-BG">Ръководител</label>
-        <label xml:lang="bs-BS">Penyelia</label>
-        <label xml:lang="bs-ID">Supervisor</label>
-        <label xml:lang="cs-CZ">Vedoucí</label>
-        <label xml:lang="da-DK">Tilsynsførende</label>
-        <label xml:lang="de-CH">Vorgesetzter</label>
-        <label xml:lang="de-DE">Vorgesetzter</label>
-        <label xml:lang="el-GR">Επόπτης </label>
-        <label xml:lang="en-GB">Supervisor</label>
-        <label xml:lang="es-ES">Supervisor</label>
-        <label xml:lang="es-MX">Supervisor</label>
-        <label xml:lang="fi-FI">Esimies</label>
-        <label xml:lang="fr-CA">Superviseur</label>
-        <label xml:lang="fr-FR">Superviseur</label>
-        <label xml:lang="he-IL">מפקח</label>
-        <label xml:lang="hi-IN">पर्यवेक्षक</label>
-        <label xml:lang="hr-HR">Nadglednik</label>
-        <label xml:lang="hu-HU">Felettes</label>
-        <label xml:lang="it-IT">Supervisore</label>
-        <label xml:lang="ja-JP">監督者</label>
-        <label xml:lang="ko-KR">감독자</label>
-        <label xml:lang="nb-NO">Ansvarlig</label>
-        <label xml:lang="nl-NL">Supervisor</label>
-        <label xml:lang="pl-PL">Przełożony</label>
-        <label xml:lang="pt-BR">Supervisor</label>
-        <label xml:lang="pt-PT">Supervisor</label>
-        <label xml:lang="ro-RO">Supervizor</label>
-        <label xml:lang="ru-RU">Контролер</label>
-        <label xml:lang="sk-SK">Supervízor</label>
-        <label xml:lang="sl-SI">Nadzornik</label>
-        <label xml:lang="sr-RS">Nadzornik</label>
-        <label xml:lang="sv-SE">Supervisor</label>
-        <label xml:lang="th-TH">หัวหน้างาน</label>
-        <label xml:lang="tr-TR">Amir</label>
-        <label xml:lang="vi-VN">Giám sát viên</label>
-        <label xml:lang="zh-CN">主管</label>
-        <label xml:lang="zh-TW">主管</label>
         <label xml:lang="en-US">Manager</label>
       </hris-field>
       <hris-field max-length="384" id="hr-manager" visibility="both">
@@ -18713,7 +18695,7 @@
         <label xml:lang="en-US">Radford Job Description</label>
       </hris-field>
       <hris-field max-length="256" id="custom-string2" visibility="both">
-        <label xml:lang="en-US">Radford Level</label>
+        <label xml:lang="en-US">Job Level</label>
       </hris-field>
       <hris-field max-length="256" id="custom-string7" visibility="both">
         <label xml:lang="en-US">Management Class</label>
@@ -18731,7 +18713,7 @@
         <label xml:lang="en-US">Global Grade</label>
       </hris-field>
       <hris-field max-length="256" id="custom-string11" visibility="both">
-        <label xml:lang="en-US">Pay Range</label>
+        <label xml:lang="en-US">Salary Range</label>
       </hris-field>
       <hris-field max-length="256" id="custom-double1" visibility="both">
         <label xml:lang="en-US">Min</label>
@@ -18754,632 +18736,62 @@
       </hris-field>
       <hris-field id="is-eligible-for-car" visibility="none">
         <label>Is Eligible For Car</label>
-        <label xml:lang="ar-SA">مؤهل للحصول على سيارة</label>
-        <label xml:lang="bg-BG">Избираем за лек автомобил</label>
-        <label xml:lang="bs-BS">Layak Untuk Kereta</label>
-        <label xml:lang="bs-ID">Berhak Mendapat Mobil</label>
-        <label xml:lang="cs-CZ">Má nárok na automobil</label>
-        <label xml:lang="da-DK">Er berettiget til bil</label>
-        <label xml:lang="de-CH">Hat Anspruch auf Dienstwagen</label>
-        <label xml:lang="de-DE">Hat Anspruch auf Dienstwagen</label>
-        <label xml:lang="el-GR">Κατάλληλος για Χορήγηση Αυτοκινήτου </label>
-        <label xml:lang="en-GB">Is Eligible for Car</label>
-        <label xml:lang="es-ES">Es apto para automóvil</label>
-        <label xml:lang="es-MX">Es apto para automóvil</label>
-        <label xml:lang="fi-FI">On oikeutettu autoon</label>
-        <label xml:lang="fr-CA">Admissible à une voiture de fonction</label>
-        <label xml:lang="fr-FR">A droit à un véhicule</label>
-        <label xml:lang="he-IL">זכאי לרכב</label>
-        <label xml:lang="hi-IN">कार हेतु योग्य है</label>
-        <label xml:lang="hr-HR">Je podoban za automobil</label>
-        <label xml:lang="hu-HU">Jogosult autóra</label>
-        <label xml:lang="it-IT">È idoneo per automobile</label>
-        <label xml:lang="ja-JP">乗用車適格</label>
-        <label xml:lang="ko-KR">차량 사용 자격 여부</label>
-        <label xml:lang="nb-NO">Kvalifisert for bil</label>
-        <label xml:lang="nl-NL">Komt in aanmerking voor auto</label>
-        <label xml:lang="pl-PL">Kwalifikacja do otrzymania samochodu służbowego</label>
-        <label xml:lang="pt-BR">É elegível para carro</label>
-        <label xml:lang="pt-PT">É elegível para um automóvel</label>
-        <label xml:lang="ro-RO">Este eligibil pentru maşină</label>
-        <label xml:lang="ru-RU">Имеет право на автомобиль</label>
-        <label xml:lang="sk-SK">Má predpoklady na vozidlo</label>
-        <label xml:lang="sl-SI">Je upravičen do avtomobila</label>
-        <label xml:lang="sr-RS">Ispunjava uslove za automobil</label>
-        <label xml:lang="sv-SE">Är berättigad till bil</label>
-        <label xml:lang="th-TH">มีสิทธิได้รับรถ</label>
-        <label xml:lang="tr-TR">Araç Alabilir</label>
-        <label xml:lang="vi-VN">Thích hợp cho xe</label>
-        <label xml:lang="zh-CN">是否有资格获得汽车</label>
-        <label xml:lang="zh-TW">具備使用汽車資格</label>
         <label xml:lang="en-US">Is Eligible For Car</label>
       </hris-field>
       <hris-field id="is-eligible-for-benefit" visibility="none">
         <label>Is Eligible For Benefit</label>
-        <label xml:lang="ar-SA">مؤهل للحصول على إعانة</label>
-        <label xml:lang="bg-BG">Избираем за придобивка</label>
-        <label xml:lang="bs-BS">Layak Untuk Manfaat</label>
-        <label xml:lang="bs-ID">Berhak Mendapat Tunjangan</label>
-        <label xml:lang="cs-CZ">Má nárok na odměnu</label>
-        <label xml:lang="da-DK">Er berettiget til goder</label>
-        <label xml:lang="de-CH">Hat Anspruch auf Zusatzleistungen</label>
-        <label xml:lang="de-DE">Hat Anspruch auf Zusatzleistungen</label>
-        <label xml:lang="el-GR">Κατάλληλος Για Παροχές </label>
-        <label xml:lang="en-GB">Is Eligible for Benefit</label>
-        <label xml:lang="es-ES">Es apto para prestación</label>
-        <label xml:lang="es-MX">Es apto para prestación</label>
-        <label xml:lang="fi-FI">On oikeutettu etuihin</label>
-        <label xml:lang="fr-CA">Admissible aux avantages</label>
-        <label xml:lang="fr-FR">A droit à des avantages</label>
-        <label xml:lang="he-IL">זכאי להטבה</label>
-        <label xml:lang="hi-IN">लाभ हेतु योग्य है</label>
-        <label xml:lang="hr-HR">Je podoban za olakšicu</label>
-        <label xml:lang="hu-HU">Jogosult juttatásokra</label>
-        <label xml:lang="it-IT">È idoneo per benefit</label>
-        <label xml:lang="ja-JP">福利適格</label>
-        <label xml:lang="ko-KR">수당 수급 자격 여부</label>
-        <label xml:lang="nb-NO">Er kvalifisert for tilleggsgodtgjørelse</label>
-        <label xml:lang="nl-NL">Komt in aanmerking voor secundaire voordelen</label>
-        <label xml:lang="pl-PL">Kwalifikacja do otrzymania świadczeń</label>
-        <label xml:lang="pt-BR">É elegível para benefício</label>
-        <label xml:lang="pt-PT">É elegível para benefícios</label>
-        <label xml:lang="ro-RO">Este eligibil pentru beneficiu</label>
-        <label xml:lang="ru-RU">Имеет право на льготы</label>
-        <label xml:lang="sk-SK">Má predpoklady na výhody</label>
-        <label xml:lang="sl-SI">Je upravičen do bonitete</label>
-        <label xml:lang="sr-RS">Ispunjava uslove za beneficiju</label>
-        <label xml:lang="sv-SE">Är berättigad till förmån</label>
-        <label xml:lang="th-TH">มีสิทธิได้รับสิทธิประโยชน์</label>
-        <label xml:lang="tr-TR">Yan Yardım Alabilir</label>
-        <label xml:lang="vi-VN">Thích hợp cho phúc lợi</label>
-        <label xml:lang="zh-CN">是否有资格获得福利</label>
-        <label xml:lang="zh-TW">具備享有福利資格</label>
         <label xml:lang="en-US">Is Eligible For Benefit</label>
       </hris-field>
       <hris-field id="is-shift-employee" visibility="none">
         <label>Is Shift Employee</label>
-        <label xml:lang="ar-SA">موظف وردية</label>
-        <label xml:lang="bg-BG">Е служител на смени</label>
-        <label xml:lang="bs-BS">Adalah Pekerja Syif</label>
-        <label xml:lang="bs-ID">Adalah Karyawan Shift</label>
-        <label xml:lang="cs-CZ">Pracuje na směny</label>
-        <label xml:lang="da-DK">Er skifteholdsmedarbejder</label>
-        <label xml:lang="de-CH">Arbeitet im Schichtbetrieb</label>
-        <label xml:lang="de-DE">Arbeitet im Schichtbetrieb</label>
-        <label xml:lang="el-GR">Εργαζόμενος Βάρδιας </label>
-        <label xml:lang="en-GB">Is Shift Employee</label>
-        <label xml:lang="es-ES">Es empleado de turno</label>
-        <label xml:lang="es-MX">Es empleado de turno</label>
-        <label xml:lang="fi-FI">On vuorotyöntekijä</label>
-        <label xml:lang="fr-CA">Est un employé en équipe</label>
-        <label xml:lang="fr-FR">Travaille en équipes</label>
-        <label xml:lang="he-IL">עובד משמרת</label>
-        <label xml:lang="hi-IN">शिफ़्ट में काम करने वाला कर्मचारी है</label>
-        <label xml:lang="hr-HR">Je zaposlenik u smjenama</label>
-        <label xml:lang="hu-HU">Műszakban dolgozó</label>
-        <label xml:lang="it-IT">È dipendente con turni</label>
-        <label xml:lang="ja-JP">交代勤務従業員</label>
-        <label xml:lang="ko-KR">교대 근무 사원</label>
-        <label xml:lang="nb-NO">Er skiftarbeider</label>
-        <label xml:lang="nl-NL">Is ploegenwerker</label>
-        <label xml:lang="pl-PL">Pracownik zmianowy</label>
-        <label xml:lang="pt-BR">É colaborador de turno</label>
-        <label xml:lang="pt-PT">É empregado por turnos</label>
-        <label xml:lang="ro-RO">Este angajat în ture</label>
-        <label xml:lang="ru-RU">Является сотрудником, работающим по сменам</label>
-        <label xml:lang="sk-SK">Pracuje na zmeny</label>
-        <label xml:lang="sl-SI">Izmenski delavec</label>
-        <label xml:lang="sr-RS">Zaposleni koji radi u smenama</label>
-        <label xml:lang="sv-SE">Är skiftanställd</label>
-        <label xml:lang="th-TH">เป็นพนักงานที่มีการเลื่อน</label>
-        <label xml:lang="tr-TR">Vardiyalı Çalışandır</label>
-        <label xml:lang="vi-VN">Nhân viên làm theo ca</label>
-        <label xml:lang="zh-CN">是否是倒班员工</label>
-        <label xml:lang="zh-TW">是輪班員工</label>
         <label xml:lang="en-US">Is Shift Employee</label>
       </hris-field>
       <hris-field max-length="256" id="shift-code" visibility="none">
         <label>Shift Code</label>
-        <label xml:lang="ar-SA">رمز الوردية</label>
-        <label xml:lang="bg-BG">Код на смяна</label>
-        <label xml:lang="bs-BS">Kod Syif</label>
-        <label xml:lang="bs-ID">Kode Shift</label>
-        <label xml:lang="cs-CZ">Kód směny</label>
-        <label xml:lang="da-DK">Skifteholdskode</label>
-        <label xml:lang="de-CH">Schichtcode</label>
-        <label xml:lang="de-DE">Schichtcode</label>
-        <label xml:lang="el-GR">Κωδικός Βάρδιας </label>
-        <label xml:lang="en-GB">Shift Code</label>
-        <label xml:lang="es-ES">Código de turno</label>
-        <label xml:lang="es-MX">Código de turno</label>
-        <label xml:lang="fi-FI">Vuorokoodi</label>
-        <label xml:lang="fr-CA">Code de l'équipe</label>
-        <label xml:lang="fr-FR">Code d’équipe</label>
-        <label xml:lang="he-IL">קוד משמרת</label>
-        <label xml:lang="hi-IN">शिफ़्ट कोड</label>
-        <label xml:lang="hr-HR">Šifra smjene</label>
-        <label xml:lang="hu-HU">Műszakkód</label>
-        <label xml:lang="it-IT">Codice turno</label>
-        <label xml:lang="ja-JP">交代勤務コード</label>
-        <label xml:lang="ko-KR">교대 근무 코드</label>
-        <label xml:lang="nb-NO">Skiftkode</label>
-        <label xml:lang="nl-NL">Ploegcode</label>
-        <label xml:lang="pl-PL">Kod zmiany</label>
-        <label xml:lang="pt-BR">Código do turno</label>
-        <label xml:lang="pt-PT">Código do turno</label>
-        <label xml:lang="ro-RO">Cod tură</label>
-        <label xml:lang="ru-RU">Код смены</label>
-        <label xml:lang="sk-SK">Kód zmeny</label>
-        <label xml:lang="sl-SI">Koda izmene</label>
-        <label xml:lang="sr-RS">Šifra smene</label>
-        <label xml:lang="sv-SE">Skiftkod</label>
-        <label xml:lang="th-TH">รหัสการเลื่อน</label>
-        <label xml:lang="tr-TR">Vardiya Kodu</label>
-        <label xml:lang="vi-VN">Mã ca</label>
-        <label xml:lang="zh-CN">班次代码</label>
-        <label xml:lang="zh-TW">輪班代碼</label>
         <label xml:lang="en-US">Shift Code</label>
       </hris-field>
       <hris-field max-length="256" id="shift-rate" visibility="none" maximumFractionDigits="2">
         <label>Shift Rate</label>
-        <label xml:lang="ar-SA">معدل الوردية</label>
-        <label xml:lang="bg-BG">Ставка смяна</label>
-        <label xml:lang="bs-BS">Kadar Syif</label>
-        <label xml:lang="bs-ID">Nilai Shift</label>
-        <label xml:lang="cs-CZ">Tarif směny</label>
-        <label xml:lang="da-DK">Skifteholdssats</label>
-        <label xml:lang="de-CH">Schichtsatz</label>
-        <label xml:lang="de-DE">Schichtsatz</label>
-        <label xml:lang="el-GR">Τιμή Βάρδιας </label>
-        <label xml:lang="en-GB">Shift Rate</label>
-        <label xml:lang="es-ES">Índice de turno</label>
-        <label xml:lang="es-MX">Índice de turno</label>
-        <label xml:lang="fi-FI">Vuoroaste</label>
-        <label xml:lang="fr-CA">Taux de l'équipe</label>
-        <label xml:lang="fr-FR">Taux de travail en équipes</label>
-        <label xml:lang="he-IL">תוספת שכר למשמרת</label>
-        <label xml:lang="hi-IN">शिफ़्ट दर</label>
-        <label xml:lang="hr-HR">Stopa smjene</label>
-        <label xml:lang="hu-HU">Műszakpótlék</label>
-        <label xml:lang="it-IT">Tariffa turno</label>
-        <label xml:lang="ja-JP">交代勤務時給</label>
-        <label xml:lang="ko-KR">교대 근무 비율</label>
-        <label xml:lang="nb-NO">Skifttillegg</label>
-        <label xml:lang="nl-NL">Ploegtarief</label>
-        <label xml:lang="pl-PL">Stawka zmianowa</label>
-        <label xml:lang="pt-BR">Taxa de turno</label>
-        <label xml:lang="pt-PT">Classificação do turno</label>
-        <label xml:lang="ro-RO">Evaluare tură</label>
-        <label xml:lang="ru-RU">Ставка смены</label>
-        <label xml:lang="sk-SK">Zmennosť</label>
-        <label xml:lang="sl-SI">Stopnja izmene</label>
-        <label xml:lang="sr-RS">Stopa smene</label>
-        <label xml:lang="sv-SE">Skiftfrekvens</label>
-        <label xml:lang="th-TH">อัตราการเลื่อน</label>
-        <label xml:lang="tr-TR">Vardiya Ücreti</label>
-        <label xml:lang="vi-VN">Định mức ca</label>
-        <label xml:lang="zh-CN">换班率</label>
-        <label xml:lang="zh-TW">輪班工資率</label>
         <label xml:lang="en-US">Shift Rate</label>
       </hris-field>
       <hris-field max-length="256" id="shift-factor" visibility="none" maximumFractionDigits="2">
         <label>Shift Percent</label>
-        <label xml:lang="ar-SA">نسبة الوردية</label>
-        <label xml:lang="bg-BG">Процент смяна</label>
-        <label xml:lang="bs-BS">Peratus Syif</label>
-        <label xml:lang="bs-ID">Persen Shift</label>
-        <label xml:lang="cs-CZ">Směna – procenta</label>
-        <label xml:lang="da-DK">Skifteholdsprocent</label>
-        <label xml:lang="de-CH">Schichtprozent</label>
-        <label xml:lang="de-DE">Schichtprozent</label>
-        <label xml:lang="el-GR">Ποσοστό Βάρδιας </label>
-        <label xml:lang="en-GB">Shift Percent</label>
-        <label xml:lang="es-ES">Porcentaje de turno</label>
-        <label xml:lang="es-MX">Porcentaje de turno</label>
-        <label xml:lang="fi-FI">Vuoroprosentti</label>
-        <label xml:lang="fr-CA">Pourcentage de l'équipe</label>
-        <label xml:lang="fr-FR">Pourcentage de travail en équipes</label>
-        <label xml:lang="he-IL">אחוז למשמרת</label>
-        <label xml:lang="hi-IN">शिफ़्ट प्रतिशत</label>
-        <label xml:lang="hr-HR">Postotak smjene</label>
-        <label xml:lang="hu-HU">Műszak százaléka</label>
-        <label xml:lang="it-IT">Percentuale turno</label>
-        <label xml:lang="ja-JP">交代勤務パーセント</label>
-        <label xml:lang="ko-KR">교대 근무 백분율</label>
-        <label xml:lang="nb-NO">Skiftprosent</label>
-        <label xml:lang="nl-NL">Ploegpercentage</label>
-        <label xml:lang="pl-PL">Wartość procentowa zmianowa</label>
-        <label xml:lang="pt-BR">Porcentagem de turno</label>
-        <label xml:lang="pt-PT">Percentagem do turno</label>
-        <label xml:lang="ro-RO">Procent tură</label>
-        <label xml:lang="ru-RU">Процент смены</label>
-        <label xml:lang="sk-SK">Percento zmien</label>
-        <label xml:lang="sl-SI">Odstotek izmene</label>
-        <label xml:lang="sr-RS">Procenat smene</label>
-        <label xml:lang="sv-SE">Skiftprocent</label>
-        <label xml:lang="th-TH">เปอร์เซ็นต์การเลื่อน</label>
-        <label xml:lang="tr-TR">Vardiya Yüzdesi</label>
-        <label xml:lang="vi-VN">Tỷ lệ ca</label>
-        <label xml:lang="zh-CN">班次比例</label>
-        <label xml:lang="zh-TW">輪班百分比</label>
         <label xml:lang="en-US">Shift Percent</label>
       </hris-field>
       <hris-field max-length="256" id="pay-group" visibility="none">
         <label>Pay Group</label>
-        <label xml:lang="ar-SA">مجموعة الرواتب</label>
-        <label xml:lang="bg-BG">Група на заплащане</label>
-        <label xml:lang="bs-BS">Kumpulan Gaji</label>
-        <label xml:lang="bs-ID">Kelompok Gaji</label>
-        <label xml:lang="cs-CZ">Platová skupina</label>
-        <label xml:lang="da-DK">Løngruppe</label>
-        <label xml:lang="de-CH">Abrechnungskreis</label>
-        <label xml:lang="de-DE">Abrechnungskreis</label>
-        <label xml:lang="el-GR">Μισθολογική Ομάδα </label>
-        <label xml:lang="en-GB">Pay Group</label>
-        <label xml:lang="es-ES">Grupo de remuneración</label>
-        <label xml:lang="es-MX">Grupo de remuneración</label>
-        <label xml:lang="fi-FI">Palkkaryhmä</label>
-        <label xml:lang="fr-CA">Groupe salarial</label>
-        <label xml:lang="fr-FR">Groupe de rémunération</label>
-        <label xml:lang="he-IL">קבוצת שכר</label>
-        <label xml:lang="hi-IN">वेतन समूह</label>
-        <label xml:lang="hr-HR">Grupa plaće</label>
-        <label xml:lang="hu-HU">Díjazási csoport</label>
-        <label xml:lang="it-IT">Gruppo di retribuzione</label>
-        <label xml:lang="ja-JP">給与グループ</label>
-        <label xml:lang="ko-KR">급여 그룹</label>
-        <label xml:lang="nb-NO">Lønnsgruppe</label>
-        <label xml:lang="nl-NL">Beloningsgroep</label>
-        <label xml:lang="pl-PL">Grupa płacy</label>
-        <label xml:lang="pt-BR">Grupo salarial</label>
-        <label xml:lang="pt-PT">Grupo de pagamento</label>
-        <label xml:lang="ro-RO">Grup de plată</label>
-        <label xml:lang="ru-RU">Группа оплаты</label>
-        <label xml:lang="sk-SK">Platová skupina</label>
-        <label xml:lang="sl-SI">Plačilna skupina</label>
-        <label xml:lang="sr-RS">Grupa plata</label>
-        <label xml:lang="sv-SE">Lönegrupp</label>
-        <label xml:lang="th-TH">กลุ่มการจ่ายเงิน</label>
-        <label xml:lang="tr-TR">Ödeme Grubu</label>
-        <label xml:lang="vi-VN">Nhóm trả lương</label>
-        <label xml:lang="zh-CN">工资组</label>
-        <label xml:lang="zh-TW">薪資組</label>
         <label xml:lang="en-US">Pay Group</label>
       </hris-field>
       <hris-field max-length="256" id="international-org-code" visibility="none">
         <label>International Org Code</label>
-        <label xml:lang="ar-SA">رمز المؤسسة الدولي</label>
-        <label xml:lang="bg-BG">Международен код на организация</label>
-        <label xml:lang="bs-BS">Kod Org Antarabangsa</label>
-        <label xml:lang="bs-ID">Kode Org Internasional</label>
-        <label xml:lang="cs-CZ">Mezinárodní org. kód</label>
-        <label xml:lang="da-DK">International org.kode</label>
-        <label xml:lang="de-CH">Internationaler Organisationscode</label>
-        <label xml:lang="de-DE">Internationaler Organisationscode</label>
-        <label xml:lang="el-GR">Κωδ.Διεθνούς Οργανισμού </label>
-        <label xml:lang="en-GB">International Org Code</label>
-        <label xml:lang="es-ES">Código de org. internacional</label>
-        <label xml:lang="es-MX">Código de org. internacional</label>
-        <label xml:lang="fi-FI">Kansainvälinen organisaatiokoodi</label>
-        <label xml:lang="fr-CA">Code multinationale</label>
-        <label xml:lang="fr-FR">Code d’organisation internationale</label>
-        <label xml:lang="he-IL">קוד ארגון בינלאומי</label>
-        <label xml:lang="hi-IN">अंतर्राष्ट्रीय संगठन कोड</label>
-        <label xml:lang="hr-HR">Šifra međunarodne organizacije</label>
-        <label xml:lang="hu-HU">Nemzetközi szervezeti kód</label>
-        <label xml:lang="it-IT">Codice org internazionale</label>
-        <label xml:lang="ja-JP">国際組織コード</label>
-        <label xml:lang="ko-KR">국가별 조직 코드</label>
-        <label xml:lang="nb-NO">Internasjonal org.kode</label>
-        <label xml:lang="nl-NL">Code internationale org</label>
-        <label xml:lang="pl-PL">Międzynarodowy kod organizacji</label>
-        <label xml:lang="pt-BR">Código da organização internacional</label>
-        <label xml:lang="pt-PT">Código da organização internacional</label>
-        <label xml:lang="ro-RO">Cod organizaţie internaţională</label>
-        <label xml:lang="ru-RU">Код международной организации</label>
-        <label xml:lang="sk-SK">Medzinárodný kód org.</label>
-        <label xml:lang="sl-SI">Koda mednarodne organizacije</label>
-        <label xml:lang="sr-RS">Međunarodna šifra organizacije</label>
-        <label xml:lang="sv-SE">Internationell organisationskod</label>
-        <label xml:lang="th-TH">รหัสองค์กรระหว่างประเทศ</label>
-        <label xml:lang="tr-TR">Uluslararası Org. Kodu</label>
-        <label xml:lang="vi-VN">Mã tổ chức quốc tế</label>
-        <label xml:lang="zh-CN">国际组织代码</label>
-        <label xml:lang="zh-TW">國際組織代碼</label>
         <label xml:lang="en-US">International Org Code</label>
       </hris-field>
       <hris-field max-length="256" id="manager-category" visibility="none">
         <label>Manager Category</label>
-        <label xml:lang="ar-SA">فئة المدير</label>
-        <label xml:lang="bg-BG">Категория мениджър</label>
-        <label xml:lang="bs-BS">Kategori Pengurus</label>
-        <label xml:lang="bs-ID">Kategori Manajer</label>
-        <label xml:lang="cs-CZ">Kategorie manažera</label>
-        <label xml:lang="da-DK">Chefkategori</label>
-        <label xml:lang="de-CH">Vorgesetztenkategorie</label>
-        <label xml:lang="de-DE">Vorgesetztenkategorie</label>
-        <label xml:lang="el-GR">Κατηγορία Δ/ντή </label>
-        <label xml:lang="en-GB">Manager Category</label>
-        <label xml:lang="es-ES">Categoría de supervisor</label>
-        <label xml:lang="es-MX">Categoría de supervisor</label>
-        <label xml:lang="fi-FI">Esimiesluokka</label>
-        <label xml:lang="fr-CA">Catégorie de gestionnaire</label>
-        <label xml:lang="fr-FR">Catégorie de responsable</label>
-        <label xml:lang="he-IL">קטגוריית מנהל</label>
-        <label xml:lang="hi-IN">प्रबंधक श्रेणी</label>
-        <label xml:lang="hr-HR">Kategorija managera</label>
-        <label xml:lang="hu-HU">Vezető kategória</label>
-        <label xml:lang="it-IT">Categoria manager</label>
-        <label xml:lang="ja-JP">マネージャーカテゴリ</label>
-        <label xml:lang="ko-KR">관리자 범주</label>
-        <label xml:lang="nb-NO">Lederkategori</label>
-        <label xml:lang="nl-NL">Categorie manager</label>
-        <label xml:lang="pl-PL">Kategoria menedżera</label>
-        <label xml:lang="pt-BR">Categoria de gerente</label>
-        <label xml:lang="pt-PT">Categoria de chefia</label>
-        <label xml:lang="ro-RO">Categorie manager</label>
-        <label xml:lang="ru-RU">Категория руководителя</label>
-        <label xml:lang="sk-SK">Kategória manažéra</label>
-        <label xml:lang="sl-SI">Kategorija managerja</label>
-        <label xml:lang="sr-RS">Kategorija menadžera</label>
-        <label xml:lang="sv-SE">Chefskategori</label>
-        <label xml:lang="th-TH">หมวดผู้จัดการ</label>
-        <label xml:lang="tr-TR">Yönetici Kategorisi</label>
-        <label xml:lang="vi-VN">Danh mục người quản lý</label>
-        <label xml:lang="zh-CN">经理类别</label>
-        <label xml:lang="zh-TW">管理者類別</label>
         <label xml:lang="en-US">Manager Category</label>
       </hris-field>
       <hris-field id="is-eligible-for-financial-plan" visibility="none">
         <label>Is Eligible For Financial Plan</label>
-        <label xml:lang="ar-SA">مؤهل للتعامل مع الخطة المالية</label>
-        <label xml:lang="bg-BG">Избираем за финансов план</label>
-        <label xml:lang="bs-BS">Layak Untuk Pelan Kewangan</label>
-        <label xml:lang="bs-ID">Berhak Mendapat Program Keuangan</label>
-        <label xml:lang="cs-CZ">Má nárok na finanční plán</label>
-        <label xml:lang="da-DK">Er berettiget til finansiel plan</label>
-        <label xml:lang="de-CH">Hat Anspruch auf Finanzplan</label>
-        <label xml:lang="de-DE">Hat Anspruch auf Finanzplan</label>
-        <label xml:lang="el-GR">Κατάλληλος Για Οικονομικό Πρόγραμμα</label>
-        <label xml:lang="en-GB">Is Eligible for Financial Plan</label>
-        <label xml:lang="es-ES">Es apto para planificación financiera</label>
-        <label xml:lang="es-MX">Es apto para planificación financiera</label>
-        <label xml:lang="fi-FI">On oikeutettu rahoitussuunnitelmaan</label>
-        <label xml:lang="fr-CA">Admissible au plan de financement</label>
-        <label xml:lang="fr-FR">A droit à un plan financier</label>
-        <label xml:lang="he-IL">זכאי לתוכנית פיננסית</label>
-        <label xml:lang="hi-IN">वित्तीय योजना हेतु योग्य है</label>
-        <label xml:lang="hr-HR">Je podoban za financijski plan</label>
-        <label xml:lang="hu-HU">Jogosult pénzügyi csomagra</label>
-        <label xml:lang="it-IT">È idoneo per piano finanziario</label>
-        <label xml:lang="ja-JP">資金計画適格</label>
-        <label xml:lang="ko-KR">자산 운용 자격 여부</label>
-        <label xml:lang="nb-NO">Er kvalifisert for økonomisk plan</label>
-        <label xml:lang="nl-NL">Komt in aanmerking voor financieel plan</label>
-        <label xml:lang="pl-PL">Kwalifikacja do planu finansowego</label>
-        <label xml:lang="pt-BR">É elegível para plano financeiro</label>
-        <label xml:lang="pt-PT">É elegível para um plano financeiro</label>
-        <label xml:lang="ro-RO">Este eligibil pentru plan financiar</label>
-        <label xml:lang="ru-RU">Имеет право на финансовый план</label>
-        <label xml:lang="sk-SK">Má predpoklad pre finančný plán</label>
-        <label xml:lang="sl-SI">Je upravičen do finančnega načrta</label>
-        <label xml:lang="sr-RS">Ispunjava uslove za finansijski plan</label>
-        <label xml:lang="sv-SE">Är berättigad till finansplan</label>
-        <label xml:lang="th-TH">มีคุณสมบัติสำหรับแผนการเงิน</label>
-        <label xml:lang="tr-TR">Finansman Planı Hakkına Sahip</label>
-        <label xml:lang="vi-VN">Thích hợp cho kế hoạch tài chính</label>
-        <label xml:lang="zh-CN">是否有资格参与财务计划</label>
-        <label xml:lang="zh-TW">具備財務計劃資格</label>
         <label xml:lang="en-US">Is Eligible For Financial Plan</label>
       </hris-field>
       <hris-field max-length="256" id="amount-of-financial-plan" visibility="none">
         <label>Amount Of Financial Plan</label>
-        <label xml:lang="ar-SA">مبلغ الخطة المالية</label>
-        <label xml:lang="bg-BG">Сума на финансов план</label>
-        <label xml:lang="bs-BS">Jumlah Pelan Kewangan</label>
-        <label xml:lang="bs-ID">Jumlah Program Keuangan</label>
-        <label xml:lang="cs-CZ">Částka finančního plánu</label>
-        <label xml:lang="da-DK">Beløb for finansiel plan</label>
-        <label xml:lang="de-CH">Betrag des Finanzplans</label>
-        <label xml:lang="de-DE">Betrag des Finanzplans</label>
-        <label xml:lang="el-GR">Ποσό Οικονομικού Προγρ/τος </label>
-        <label xml:lang="en-GB">Amount of Financial Plan</label>
-        <label xml:lang="es-ES">Importe de planificación financiera</label>
-        <label xml:lang="es-MX">Importe de planificación financiera</label>
-        <label xml:lang="fi-FI">Rahoitussuunnitelman summa</label>
-        <label xml:lang="fr-CA">Montant du plan de financement</label>
-        <label xml:lang="fr-FR">Montant du plan financier</label>
-        <label xml:lang="he-IL">סכום תוכנית פיננסית</label>
-        <label xml:lang="hi-IN">वित्तीय योजना की राशि</label>
-        <label xml:lang="hr-HR">Iznos financijskog plana</label>
-        <label xml:lang="hu-HU">Pénzügyi csomag összege</label>
-        <label xml:lang="it-IT">Importo del piano finanziario</label>
-        <label xml:lang="ja-JP">資金計画の金額</label>
-        <label xml:lang="ko-KR">자산 운용액</label>
-        <label xml:lang="nb-NO">Beløp for økonomisk plan</label>
-        <label xml:lang="nl-NL">Bedrag financieel plan</label>
-        <label xml:lang="pl-PL">Wartość planu finansowego</label>
-        <label xml:lang="pt-BR">Montante do plano financeiro</label>
-        <label xml:lang="pt-PT">Quantia do plano financeiro</label>
-        <label xml:lang="ro-RO">Sumă plan financiar</label>
-        <label xml:lang="ru-RU">Сумма финансового плана</label>
-        <label xml:lang="sk-SK">Čiastka finančného plánu</label>
-        <label xml:lang="sl-SI">Znesek finančnega načrta</label>
-        <label xml:lang="sr-RS">Iznos finansijskog plana</label>
-        <label xml:lang="sv-SE">Belopp för finansplan</label>
-        <label xml:lang="th-TH">จำนวนของแผนการเงิน</label>
-        <label xml:lang="tr-TR">Finansman Planı Tutarı</label>
-        <label xml:lang="vi-VN">Số tiền theo kế hoạch tài chính</label>
-        <label xml:lang="zh-CN">财务计划金额</label>
-        <label xml:lang="zh-TW">財務計劃金額</label>
         <label xml:lang="en-US">Amount Of Financial Plan</label>
       </hris-field>
       <hris-field max-length="256" id="supervisor-level" visibility="none">
         <label>Supervisor Level</label>
-        <label xml:lang="ar-SA">مستوى المشرف</label>
-        <label xml:lang="bg-BG">Ниво на ръководител</label>
-        <label xml:lang="bs-BS">Peringkat Penyelia</label>
-        <label xml:lang="bs-ID">Tingkat Penyelia</label>
-        <label xml:lang="cs-CZ">Úroveň vedoucího</label>
-        <label xml:lang="da-DK">Tilsynsførende niveau</label>
-        <label xml:lang="de-CH">Vorgesetztenebene</label>
-        <label xml:lang="de-DE">Vorgesetztenebene</label>
-        <label xml:lang="el-GR">Επίπεδο Επόπτη </label>
-        <label xml:lang="en-GB">Supervisor Level</label>
-        <label xml:lang="es-ES">Nivel de supervisor</label>
-        <label xml:lang="es-MX">Nivel de supervisor</label>
-        <label xml:lang="fi-FI">Esimiestaso</label>
-        <label xml:lang="fr-CA">Niveau superviseur</label>
-        <label xml:lang="fr-FR">Niveau du superviseur</label>
-        <label xml:lang="he-IL">רמת מפקח</label>
-        <label xml:lang="hi-IN">पर्यवेक्षक स्तर</label>
-        <label xml:lang="hr-HR">Razina nadglednika</label>
-        <label xml:lang="hu-HU">Felügyelői szint</label>
-        <label xml:lang="it-IT">Livello supervisore</label>
-        <label xml:lang="ja-JP">スーパーバイザーレベル</label>
-        <label xml:lang="ko-KR">감독자 수준</label>
-        <label xml:lang="nb-NO">Ledernivå</label>
-        <label xml:lang="nl-NL">Supervisorniveau</label>
-        <label xml:lang="pl-PL">Poziom przełożonego</label>
-        <label xml:lang="pt-BR">Nível do supervisor</label>
-        <label xml:lang="pt-PT">Nível de supervisor</label>
-        <label xml:lang="ro-RO">Nivel supervizor</label>
-        <label xml:lang="ru-RU">Уровень непосредственного начальника</label>
-        <label xml:lang="sk-SK">Úroveň supervízora</label>
-        <label xml:lang="sl-SI">Stopnja nadrejenega</label>
-        <label xml:lang="sr-RS">Nivo nadzornika</label>
-        <label xml:lang="sv-SE">Chefsnivå</label>
-        <label xml:lang="th-TH">ระดับหัวหน้างาน</label>
-        <label xml:lang="tr-TR">Amir Düzeyi</label>
-        <label xml:lang="vi-VN">Mức giám sát</label>
-        <label xml:lang="zh-CN">监管级</label>
-        <label xml:lang="zh-TW">主管層級</label>
         <label xml:lang="en-US">Supervisor Level</label>
       </hris-field>
       <hris-field id="is-cross-border-worker" visibility="none">
         <label>Is Cross Border Worker</label>
-        <label xml:lang="ar-SA">عامل عبر الحدود</label>
-        <label xml:lang="bg-BG">Е трансграничен работник</label>
-        <label xml:lang="bs-BS">Adalah Pekerja Merentasi Sempadan</label>
-        <label xml:lang="bs-ID">Adalah Pekerja Lintas Batas</label>
-        <label xml:lang="cs-CZ">Je přeshraničním pracovníkem</label>
-        <label xml:lang="da-DK">Er grænsegænger</label>
-        <label xml:lang="de-CH">Ist Grenzgänger</label>
-        <label xml:lang="de-DE">Ist Grenzgänger</label>
-        <label xml:lang="el-GR">Διασυνοριακός Εργάτης </label>
-        <label xml:lang="en-GB">Is Cross-Border Worker</label>
-        <label xml:lang="es-ES">Es trabajador transfronterizo</label>
-        <label xml:lang="es-MX">Es trabajador transfronterizo</label>
-        <label xml:lang="fi-FI">On ulkomainen työntekijä</label>
-        <label xml:lang="fr-CA">Est un employé transfrontalier</label>
-        <label xml:lang="fr-FR">Est un travailleur transfrontalier</label>
-        <label xml:lang="he-IL">עובד בין מדינות</label>
-        <label xml:lang="hi-IN">क्रॉस बॉर्डर कर्मचारी है</label>
-        <label xml:lang="hr-HR">Je zaposlenik koji prelazi granicu</label>
-        <label xml:lang="hu-HU">Határon túli munkavállaló</label>
-        <label xml:lang="it-IT">È lavoratore frontaliero</label>
-        <label xml:lang="ja-JP">国際労働者</label>
-        <label xml:lang="ko-KR">다국가 근무자 여부</label>
-        <label xml:lang="nb-NO">Er grensearbeider</label>
-        <label xml:lang="nl-NL">Is grenspendelaar</label>
-        <label xml:lang="pl-PL">Pracownik transgraniczny</label>
-        <label xml:lang="pt-BR">É profissional estrangeiro</label>
-        <label xml:lang="pt-PT">É um trabalhador transfronteiriço</label>
-        <label xml:lang="ro-RO">Este lucrător peste graniţă</label>
-        <label xml:lang="ru-RU">Является зарубежным работником</label>
-        <label xml:lang="sk-SK">Je zahraničný pracovník</label>
-        <label xml:lang="sl-SI">Čezmejni delavec</label>
-        <label xml:lang="sr-RS">Međunarodni radnik</label>
-        <label xml:lang="sv-SE">Är gränsarbetare</label>
-        <label xml:lang="th-TH">เป็นผู้ทำงานข้ามพรมแดน</label>
-        <label xml:lang="tr-TR">Sınırlar Arası İşçidir</label>
-        <label xml:lang="vi-VN">Là công nhân xuyên biên giới</label>
-        <label xml:lang="zh-CN">是否跨境工作</label>
-        <label xml:lang="zh-TW">是跨境上班族</label>
         <label xml:lang="en-US">Is Cross Border Worker</label>
       </hris-field>
       <hris-field max-length="256" id="ern-number" visibility="none">
         <label>Employee Record Number</label>
-        <label xml:lang="ar-SA">رقم سجل الموظف</label>
-        <label xml:lang="bg-BG">Номер на запис на служител</label>
-        <label xml:lang="bs-BS">Nombor Rekod Pekerja</label>
-        <label xml:lang="bs-ID">Nomor Catatan Karyawan</label>
-        <label xml:lang="cs-CZ">Číslo záznamu zaměstnance</label>
-        <label xml:lang="da-DK">Medarbejdersagsmappenummer</label>
-        <label xml:lang="de-CH">Mitarbeiteraktennummer</label>
-        <label xml:lang="de-DE">Mitarbeiteraktennummer</label>
-        <label xml:lang="el-GR">Αριθμός Αρχείου Εργαζόμενου </label>
-        <label xml:lang="en-GB">Employee Record Number</label>
-        <label xml:lang="es-ES">Número de registro de empleado</label>
-        <label xml:lang="es-MX">Número de registro de empleado</label>
-        <label xml:lang="fi-FI">Työntekijätietueen numero</label>
-        <label xml:lang="fr-CA">Numéro de dossier de l’employé</label>
-        <label xml:lang="fr-FR">Numéro d’enregistrement de l’employé</label>
-        <label xml:lang="he-IL">מספר רשומת עובד</label>
-        <label xml:lang="hi-IN">कर्मचारी रिकॉर्ड संख्या</label>
-        <label xml:lang="hr-HR">Broj zapisa zaposlenika</label>
-        <label xml:lang="hu-HU">Munkavállaló nyilvántartási száma</label>
-        <label xml:lang="it-IT">Numero registrazione dipendente</label>
-        <label xml:lang="ja-JP">従業員レコード番号</label>
-        <label xml:lang="ko-KR">사원 레코드 번호</label>
-        <label xml:lang="nb-NO">Nummer på medarbeiderpost</label>
-        <label xml:lang="nl-NL">Nummer medewerkersrecord</label>
-        <label xml:lang="pl-PL">Numer rekordu pracownika</label>
-        <label xml:lang="pt-BR">Número de registro do colaborador</label>
-        <label xml:lang="pt-PT">Número de registo do empregado</label>
-        <label xml:lang="ro-RO">Număr dosar de angajat</label>
-        <label xml:lang="ru-RU">Номер записи сотрудника</label>
-        <label xml:lang="sk-SK">Číslo záznamu pracovníka</label>
-        <label xml:lang="sl-SI">Številka zapisa zaposlenega</label>
-        <label xml:lang="sr-RS">Broj zapisa o zaposlenom</label>
-        <label xml:lang="sv-SE">Registernummer för anställd</label>
-        <label xml:lang="th-TH">หมายเลขบันทึกของพนักงาน</label>
-        <label xml:lang="tr-TR">Çalışan Kayıt Numarası</label>
-        <label xml:lang="vi-VN">Số hồ sơ nhân viên</label>
-        <label xml:lang="zh-CN">员工记录编号</label>
-        <label xml:lang="zh-TW">員工記錄號碼</label>
         <label xml:lang="en-US">Employee Record Number</label>
       </hris-field>
       <hris-field id="company-leaving-for" visibility="none">
         <label>Company Leaving For</label>
-        <label xml:lang="ar-SA">سبب ترك الشركة</label>
-        <label xml:lang="bg-BG">Премества се в компания</label>
-        <label xml:lang="bs-BS">Syarikat Meninggalkan Untuk</label>
-        <label xml:lang="bs-ID">Perusahaan yang Dituju</label>
-        <label xml:lang="cs-CZ">Opuštění společnosti na</label>
-        <label xml:lang="da-DK">Fratræder til fordel for firma</label>
-        <label xml:lang="de-CH">Wechselt zu</label>
-        <label xml:lang="de-DE">Wechselt zu</label>
-        <label xml:lang="el-GR">Αποχώρηση από Εταιρία Για </label>
-        <label xml:lang="en-GB">Company Leaving For</label>
-        <label xml:lang="es-ES">Empresa a la que se marcha</label>
-        <label xml:lang="es-MX">Empresa a la que se marcha</label>
-        <label xml:lang="fi-FI">Organisaatio, johon lähtee</label>
-        <label xml:lang="fr-CA">Entreprise de destination</label>
-        <label xml:lang="fr-FR">A quitté l’entreprise pour</label>
-        <label xml:lang="he-IL">עזיבת חברה עבור</label>
-        <label xml:lang="hi-IN">कंपनी छोड़ने का कारण</label>
-        <label xml:lang="hr-HR">Razlog odlaska iz tvrtke</label>
-        <label xml:lang="hu-HU">Távozik vállalathoz:</label>
-        <label xml:lang="it-IT">Azienda di destinazione dopo dimissioni/licenziamento</label>
-        <label xml:lang="ja-JP">転職先会社</label>
-        <label xml:lang="ko-KR">전직 회사</label>
-        <label xml:lang="nb-NO">Går til firma</label>
-        <label xml:lang="nl-NL">Bedrijf vertrekt naar</label>
-        <label xml:lang="pl-PL">Opuszcza firmę i rozpoczyna zatrudnienie w</label>
-        <label xml:lang="pt-BR">Empresa para a qual está saindo</label>
-        <label xml:lang="pt-PT">Saiu da empresa para </label>
-        <label xml:lang="ro-RO">Motivul plecării din companie</label>
-        <label xml:lang="ru-RU">Причина ухода из компании</label>
-        <label xml:lang="sk-SK">Dôvod opustenia spoločnosti</label>
-        <label xml:lang="sl-SI">Podjetje, kamor odhaja</label>
-        <label xml:lang="sr-RS">Kompanija u koju zaposleni prelazi</label>
-        <label xml:lang="sv-SE">Lämnar företag för</label>
-        <label xml:lang="th-TH">ลาออกไปที่บริษัท</label>
-        <label xml:lang="tr-TR">Ayrılarak Gideceği Şirket</label>
-        <label xml:lang="vi-VN">Thôi việc công ty vì</label>
-        <label xml:lang="zh-CN">离职后加入的公司</label>
-        <label xml:lang="zh-TW">離職後加入的新公司</label>
         <label xml:lang="en-US">Company Leaving For</label>
       </hris-field>
       <hris-field max-length="384" id="manager" visibility="none">
@@ -19388,86 +18800,10 @@
       </hris-field>
       <hris-field max-length="256" id="is-competition-clause-active" visibility="none">
         <label>Competition Clause</label>
-        <label xml:lang="ar-SA">البند الخاص بالتنافس</label>
-        <label xml:lang="bg-BG">Ограничаваща клауза след напускане</label>
-        <label xml:lang="bs-BS">Fasal Pertandingan</label>
-        <label xml:lang="bs-ID">Klausul Kompetisi</label>
-        <label xml:lang="cs-CZ">Konkurenční doložka</label>
-        <label xml:lang="da-DK">Konkurrenceklausul</label>
-        <label xml:lang="de-CH">Konkurrenzklausel</label>
-        <label xml:lang="de-DE">Konkurrenzklausel</label>
-        <label xml:lang="el-GR">Ρήτρα περί Ανταγωνισμού </label>
-        <label xml:lang="en-GB">Competition Clause</label>
-        <label xml:lang="es-ES">Cláusula de competencia</label>
-        <label xml:lang="es-MX">Cláusula de competencia</label>
-        <label xml:lang="fi-FI">Kilpailulauseke</label>
-        <label xml:lang="fr-CA">Disposition de concurrence</label>
-        <label xml:lang="fr-FR">Clause de non-concurrence</label>
-        <label xml:lang="he-IL">סעיף תחרות</label>
-        <label xml:lang="hi-IN">प्रतिस्पर्धा परिच्छेद</label>
-        <label xml:lang="hr-HR">Zabrana natjecanja</label>
-        <label xml:lang="hu-HU">Versenyzáradék</label>
-        <label xml:lang="it-IT">Clausola di non concorrenza</label>
-        <label xml:lang="ja-JP">競合条項</label>
-        <label xml:lang="ko-KR">경쟁업체 취업 조항</label>
-        <label xml:lang="nb-NO">Konkurranseklausul</label>
-        <label xml:lang="nl-NL">Concurrentiebeding</label>
-        <label xml:lang="pl-PL">Klauzula o zakazie konkurencji</label>
-        <label xml:lang="pt-BR">Cláusula de não-concorrência</label>
-        <label xml:lang="pt-PT">Cláusula de não concorrência</label>
-        <label xml:lang="ro-RO">Clauza de non-concurenţă</label>
-        <label xml:lang="ru-RU">Оговорка об исключении конкуренции</label>
-        <label xml:lang="sk-SK">Konkurenčná klauzula</label>
-        <label xml:lang="sl-SI">Konkurenčna klavzula</label>
-        <label xml:lang="sr-RS">Zabrana konkurencije</label>
-        <label xml:lang="sv-SE">Konkurrensklausul</label>
-        <label xml:lang="th-TH">ข้อตกลงการจ้างงานเกี่ยวกับบริษัทคู่แข่ง</label>
-        <label xml:lang="tr-TR">Rekabet Maddesi</label>
-        <label xml:lang="vi-VN">Điều khoản độc quyền</label>
-        <label xml:lang="zh-CN">竞争条款</label>
-        <label xml:lang="zh-TW">競爭條款</label>
         <label xml:lang="en-US">Competition Clause</label>
       </hris-field>
       <hris-field max-length="256" id="is-side-line-job-allowed" visibility="none">
         <label>Sideline Job Allowed</label>
-        <label xml:lang="ar-SA">مسموح بعمل إضافي</label>
-        <label xml:lang="bg-BG">Работа по съвместимост е допустима</label>
-        <label xml:lang="bs-BS">Kerja Sampingan Dibenarkan</label>
-        <label xml:lang="bs-ID">Diizinkan Memiliki Pekerjaan Sampingan</label>
-        <label xml:lang="cs-CZ">Vedlejší zaměstnání povoleno</label>
-        <label xml:lang="da-DK">Bibeskæftigelse tilladt</label>
-        <label xml:lang="de-CH">Nebentätigkeit erlaubt</label>
-        <label xml:lang="de-DE">Nebentätigkeit erlaubt</label>
-        <label xml:lang="el-GR">Δευτερεύουσα Εργασία Επιτρέπεται </label>
-        <label xml:lang="en-GB">Sideline Job Allowed</label>
-        <label xml:lang="es-ES">Trabajo secundario permitido</label>
-        <label xml:lang="es-MX">Trabajo secundario permitido</label>
-        <label xml:lang="fi-FI">Sivutoimi sallittu</label>
-        <label xml:lang="fr-CA">Activité parallèle autorisée</label>
-        <label xml:lang="fr-FR">Emploi parallèle autorisé</label>
-        <label xml:lang="he-IL">משרה צדדית מותרת</label>
-        <label xml:lang="hi-IN">अनुमत पार्श्व-रेखा कार्य</label>
-        <label xml:lang="hr-HR">Dodatni posao dopušten</label>
-        <label xml:lang="hu-HU">Melléktevékenység engedélyezett</label>
-        <label xml:lang="it-IT">Attività secondaria consentita</label>
-        <label xml:lang="ja-JP">許可される副業</label>
-        <label xml:lang="ko-KR">부업 허용</label>
-        <label xml:lang="nb-NO">Ekstrajobb tillatt</label>
-        <label xml:lang="nl-NL">Nevenfunctie toegestaan</label>
-        <label xml:lang="pl-PL">Dozwolone dodatkowe zatrudnienie</label>
-        <label xml:lang="pt-BR">Segundo emprego permitido</label>
-        <label xml:lang="pt-PT">Segundo emprego permitido</label>
-        <label xml:lang="ro-RO">Activitate paralelă permisă</label>
-        <label xml:lang="ru-RU">Работа по совместительству разрешена</label>
-        <label xml:lang="sk-SK">Vedľajšie zamestnanie povolené</label>
-        <label xml:lang="sl-SI">Postranska zaposlitev je dovoljena</label>
-        <label xml:lang="sr-RS">Dodatni posao dozvoljen</label>
-        <label xml:lang="sv-SE">Sidoarbete tillåtet</label>
-        <label xml:lang="th-TH">อนุญาตให้ทำงานพิเศษนอกเวลา</label>
-        <label xml:lang="tr-TR">Ek İşe İzin Verildi</label>
-        <label xml:lang="vi-VN">Công việc bán thời gian được cho phép</label>
-        <label xml:lang="zh-CN">允许兼职</label>
-        <label xml:lang="zh-TW">允許兼職工作</label>
         <label xml:lang="en-US">Sideline Job Allowed</label>
       </hris-field>
       <hris-field max-length="256" id="probation-period-end-date" visibility="none">
@@ -19475,255 +18811,27 @@
       </hris-field>
       <hris-field max-length="256" id="sick-pay-supplement" visibility="none">
         <label>Sick Pay Supplement</label>
-        <label xml:lang="ar-SA">الدفعة الإضافية للإجازة المرضية</label>
-        <label xml:lang="bg-BG">Доплащане към болничен</label>
-        <label xml:lang="bs-BS">Tambahan Gaji Sakit</label>
-        <label xml:lang="bs-ID">Suplemen Pembayaran Ganti Rugi Sakit</label>
-        <label xml:lang="cs-CZ">Nemocenské dávky</label>
-        <label xml:lang="da-DK">Sygeløn tillæg</label>
-        <label xml:lang="de-CH">Krankengeldzuschuss</label>
-        <label xml:lang="de-DE">Krankengeldzuschuss</label>
-        <label xml:lang="el-GR">Συμπληρωματική Αμοιβή Ασθένειας </label>
-        <label xml:lang="en-GB">Sick Pay Supplement</label>
-        <label xml:lang="es-ES">Suplemento remuneración por enfermedad</label>
-        <label xml:lang="es-MX">Suplemento remuneración por enfermedad</label>
-        <label xml:lang="fi-FI">Sairausajan palkan lisä</label>
-        <label xml:lang="fr-CA">Indemnités complémentaires de maladie</label>
-        <label xml:lang="fr-FR">Indemnités complémentaires de maladie</label>
-        <label xml:lang="he-IL">תוספת תשלום מחלה</label>
-        <label xml:lang="hi-IN">चिकित्सा भुगतान पूरक</label>
-        <label xml:lang="hr-HR">Dodatak za bolovanje</label>
-        <label xml:lang="hu-HU">Táppénz.kiegészítés</label>
-        <label xml:lang="it-IT">Indennità di malattia</label>
-        <label xml:lang="ja-JP">疾病手当補足</label>
-        <label xml:lang="ko-KR">병가 수당 추가</label>
-        <label xml:lang="nb-NO">Tillegg til sykepenger</label>
-        <label xml:lang="nl-NL">Aanvullend ziekengeld</label>
-        <label xml:lang="pl-PL">Dodatek do wynagrodzenia chorobowego</label>
-        <label xml:lang="pt-BR">Suplemento de auxílio-doença</label>
-        <label xml:lang="pt-PT">Suplemento de subsídio de doença</label>
-        <label xml:lang="ro-RO">Supliment plată concediu medical</label>
-        <label xml:lang="ru-RU">Доплата к пособию по болезни</label>
-        <label xml:lang="sk-SK">Príplatok k nemocenskej dávke</label>
-        <label xml:lang="sl-SI">Dodatek k nadomestilu plače za čas odsotnosti z dela zaradi bolezni</label>
-        <label xml:lang="sr-RS">Dodatak za bolovanje</label>
-        <label xml:lang="sv-SE">Sjukpenningstillägg</label>
-        <label xml:lang="th-TH">ส่วนเพิ่มเติมเงินชดเชยการเจ็บป่วย</label>
-        <label xml:lang="tr-TR">Hastalık Ek Yardımı</label>
-        <label xml:lang="vi-VN">Thanh toán bổ sung do bệnh</label>
-        <label xml:lang="zh-CN">病假工资增补</label>
-        <label xml:lang="zh-TW">疾病給付補充</label>
         <label xml:lang="en-US">Sick Pay Supplement</label>
         <picklist id="SICKPAYSUPP" parent-field-id="country-of-company"/>
       </hris-field>
       <hris-field id="jobEntryDate" visibility="none">
         <label>Job Entry Date</label>
-        <label xml:lang="ar-SA">تاريخ إدخال الوظيفة</label>
-        <label xml:lang="bg-BG">Дата на въвеждане на длъжност</label>
-        <label xml:lang="bs-BS">Tarik Masuk Kerja</label>
-        <label xml:lang="bs-ID">Tanggal Entri Pekerjaan</label>
-        <label xml:lang="cs-CZ">Datum nástupu do práce</label>
-        <label xml:lang="da-DK">Første dag i job</label>
-        <label xml:lang="de-CH">Eintrittsdatum der Stelle</label>
-        <label xml:lang="de-DE">Eintrittsdatum der Stelle</label>
-        <label xml:lang="el-GR">Ημερομηνία Καταχώρισης Εργασίας</label>
-        <label xml:lang="en-GB">Job Entry Date</label>
-        <label xml:lang="es-ES">Fecha de entrada en el trabajo</label>
-        <label xml:lang="es-MX">Fecha de entrada en el trabajo</label>
-        <label xml:lang="fi-FI">Työn alkupäivämäärä</label>
-        <label xml:lang="fr-CA">Date d'entrée dans l'emploi</label>
-        <label xml:lang="fr-FR">Date d'entrée à l'emploi</label>
-        <label xml:lang="he-IL">תאריך כניסה למשרה</label>
-        <label xml:lang="hi-IN">जॉब में नियुक्ति का दिनांक</label>
-        <label xml:lang="hr-HR">Datum dolaska na posao</label>
-        <label xml:lang="hu-HU">Munkahelyre való belépés dátuma</label>
-        <label xml:lang="it-IT">Data di inserimento lavoro</label>
-        <label xml:lang="ja-JP">職務配属日付</label>
-        <label xml:lang="ko-KR">직무 입사일</label>
-        <label xml:lang="nb-NO">Tiltredelsesdato - jobb</label>
-        <label xml:lang="nl-NL">Invoerdatum functie</label>
-        <label xml:lang="pl-PL">Data przyjęcia stanowiska</label>
-        <label xml:lang="pt-BR">Data de entrada do trabalho </label>
-        <label xml:lang="pt-PT">Data de entrada no trabalho</label>
-        <label xml:lang="ro-RO">Dată de intrare post</label>
-        <label xml:lang="ru-RU">Дата вступления в должность</label>
-        <label xml:lang="sk-SK">Dátum nástupu do zamestnania</label>
-        <label xml:lang="sl-SI">Datum zasedbe delovnega mesta</label>
-        <label xml:lang="sr-RS">Datum stupanja na radno mesto</label>
-        <label xml:lang="sv-SE">Jobbregistreringsdatum</label>
-        <label xml:lang="th-TH">วันที่เริ่มงาน</label>
-        <label xml:lang="tr-TR">İş Giriş Tarihi</label>
-        <label xml:lang="vi-VN">Ngày nhập cảnh</label>
-        <label xml:lang="zh-CN">入职日期</label>
-        <label xml:lang="zh-TW">工作到職日期</label>
         <label xml:lang="en-US">Job Entry Date</label>
       </hris-field>
       <hris-field max-length="256" id="timeInJob" visibility="none">
         <label>Time In Job</label>
-        <label xml:lang="ar-SA">الوقت الذي تم قضائه في الوظيفة</label>
-        <label xml:lang="bg-BG">Час в длъжност</label>
-        <label xml:lang="bs-BS">Masa Dalam Kerja</label>
-        <label xml:lang="bs-ID">Waktu dalam Pekerjaan</label>
-        <label xml:lang="cs-CZ">Doba v práci</label>
-        <label xml:lang="da-DK">Tid i job</label>
-        <label xml:lang="de-CH">Dauer der Stellenzugehörigkeit</label>
-        <label xml:lang="de-DE">Dauer der Stellenzugehörigkeit</label>
-        <label xml:lang="el-GR">Χρόνος σε Εργασία</label>
-        <label xml:lang="en-GB">Time in Job</label>
-        <label xml:lang="es-ES">Antigüedad en el trabajo</label>
-        <label xml:lang="es-MX">Antigüedad en el trabajo</label>
-        <label xml:lang="fi-FI">Aika työssä</label>
-        <label xml:lang="fr-CA">Durée dans l'emploi</label>
-        <label xml:lang="fr-FR">Temps passé à l'emploi</label>
-        <label xml:lang="he-IL">משך זמן במשרה</label>
-        <label xml:lang="hi-IN">जॉब की अवधि</label>
-        <label xml:lang="hr-HR">Vrijeme na poslu</label>
-        <label xml:lang="hu-HU">Munkahelyen eltöltött idő</label>
-        <label xml:lang="it-IT">Durata nel lavoro corrente</label>
-        <label xml:lang="ja-JP">職務での期間</label>
-        <label xml:lang="ko-KR">직무 시간</label>
-        <label xml:lang="nb-NO">Varighet i jobb</label>
-        <label xml:lang="nl-NL">Tijd in functie</label>
-        <label xml:lang="pl-PL">Czas na stanowisku</label>
-        <label xml:lang="pt-BR">Hora do trabalho</label>
-        <label xml:lang="pt-PT">Tempo de ocupação do trabalho</label>
-        <label xml:lang="ro-RO">Timp în post</label>
-        <label xml:lang="ru-RU">Время нахождения в должности</label>
-        <label xml:lang="sk-SK">Čas v zamestnaní</label>
-        <label xml:lang="sl-SI">Obdobje na delovnem mestu</label>
-        <label xml:lang="sr-RS">Vreme provedeno na radnom mestu</label>
-        <label xml:lang="sv-SE">Klockslag på jobb</label>
-        <label xml:lang="th-TH">ระยะเวลาในการปฏิบัติงาน</label>
-        <label xml:lang="tr-TR">İşteki Zaman</label>
-        <label xml:lang="vi-VN">Công việc</label>
-        <label xml:lang="zh-CN">工作年限</label>
-        <label xml:lang="zh-TW">工作任職時間</label>
         <label xml:lang="en-US">Time In Job</label>
       </hris-field>
       <hris-field max-length="10" id="payScaleGroup" visibility="none">
         <label>Pay Scale Group</label>
-        <label xml:lang="ar-SA">مجموعة سلم الرواتب</label>
-        <label xml:lang="bg-BG">Група тарифи</label>
-        <label xml:lang="bs-BS">Kumpulan Skala Gaji</label>
-        <label xml:lang="bs-ID">Kelompok Skala Gaji</label>
-        <label xml:lang="cs-CZ">Skupina mzdové stupnice</label>
-        <label xml:lang="da-DK">Lønskalagruppe</label>
-        <label xml:lang="de-CH">Tarifgruppe</label>
-        <label xml:lang="de-DE">Tarifgruppe</label>
-        <label xml:lang="el-GR">Ομάδα Μισθολογικής Κλίμακας</label>
-        <label xml:lang="en-GB">Pay Scale Group</label>
-        <label xml:lang="es-ES">Grupo de escala de remuneración</label>
-        <label xml:lang="es-MX">Grupo de escala de remuneración</label>
-        <label xml:lang="fi-FI">Palkka-asteikon ryhmä</label>
-        <label xml:lang="fr-CA">Niveau</label>
-        <label xml:lang="fr-FR">Groupe d'échelle de rémunération</label>
-        <label xml:lang="he-IL">קבוצת דירוגי שכר</label>
-        <label xml:lang="hi-IN">वेतनमान समूह</label>
-        <label xml:lang="hr-HR">Grupa platne ljestvice</label>
-        <label xml:lang="hu-HU">Bérrendszercsoport</label>
-        <label xml:lang="it-IT">Gruppo della scala contrattuale</label>
-        <label xml:lang="ja-JP">賃金表グループ</label>
-        <label xml:lang="ko-KR">호봉 그룹</label>
-        <label xml:lang="nb-NO">Tariffgruppe</label>
-        <label xml:lang="nl-NL">Salaristredegroep</label>
-        <label xml:lang="pl-PL">Grupa skali płac</label>
-        <label xml:lang="pt-BR">Grupo do acordo coletivo</label>
-        <label xml:lang="pt-PT">Grupo de acordo coletivo</label>
-        <label xml:lang="ro-RO">Grup de grile de salarii</label>
-        <label xml:lang="ru-RU">Тарифная группа</label>
-        <label xml:lang="sk-SK">Mzdová tarifná skupina</label>
-        <label xml:lang="sl-SI">Skupina kolektivnih pogodb</label>
-        <label xml:lang="sr-RS">Grupa platnog opsega</label>
-        <label xml:lang="sv-SE">Kollektivavtalsgrupp</label>
-        <label xml:lang="th-TH">กลุ่มโครงสร้างค่าจ้าง/เงินเดือน</label>
-        <label xml:lang="tr-TR">Ödeme Ölçek Grubu</label>
-        <label xml:lang="vi-VN">Nhóm thang lương</label>
-        <label xml:lang="zh-CN">工资等级组</label>
-        <label xml:lang="zh-TW">薪級群組</label>
         <label xml:lang="en-US">Pay Scale Group</label>
       </hris-field>
       <hris-field max-length="10" id="payScaleLevel" visibility="none">
         <label>Pay Scale Level</label>
-        <label xml:lang="ar-SA">مستوى سلم الرواتب</label>
-        <label xml:lang="bg-BG">Ниво на тарифа</label>
-        <label xml:lang="bs-BS">Tahap Skala Gaji</label>
-        <label xml:lang="bs-ID">Tingkat Skala Gaji</label>
-        <label xml:lang="cs-CZ">Úroveň mzdové stupnice</label>
-        <label xml:lang="da-DK">Lønskalaniveau</label>
-        <label xml:lang="de-CH">Tarifstufe</label>
-        <label xml:lang="de-DE">Tarifstufe</label>
-        <label xml:lang="el-GR">Επίπεδο Μισθολογικής Κλίμακας</label>
-        <label xml:lang="en-GB">Pay Scale Level</label>
-        <label xml:lang="es-ES">Nivel de escala de remuneración</label>
-        <label xml:lang="es-MX">Nivel de escala de remuneración</label>
-        <label xml:lang="fi-FI">Palkka-asteikon taso</label>
-        <label xml:lang="fr-CA">Échelon</label>
-        <label xml:lang="fr-FR">Niveau d'échelle de rémunération</label>
-        <label xml:lang="he-IL">רמת דירוג שכר</label>
-        <label xml:lang="hi-IN">वेतनमान स्तर</label>
-        <label xml:lang="hr-HR">Razina platne ljestvice</label>
-        <label xml:lang="hu-HU">Bérrendszerszint</label>
-        <label xml:lang="it-IT">Livello della scala contrattuale</label>
-        <label xml:lang="ja-JP">賃金表レベル</label>
-        <label xml:lang="ko-KR">호봉 단계</label>
-        <label xml:lang="nb-NO">Tariffnivå</label>
-        <label xml:lang="nl-NL">Salaristredeniveau</label>
-        <label xml:lang="pl-PL">Poziom na skali płac</label>
-        <label xml:lang="pt-BR">Nível do acordo coletivo</label>
-        <label xml:lang="pt-PT">Nível de acordo coletivo</label>
-        <label xml:lang="ro-RO">Nivel grilă de salarii</label>
-        <label xml:lang="ru-RU">Уровень тарифа</label>
-        <label xml:lang="sk-SK">Mzdový tarifný stupeň</label>
-        <label xml:lang="sl-SI">Raven kolektivne pogodbe</label>
-        <label xml:lang="sr-RS">Nivo platnog opsega</label>
-        <label xml:lang="sv-SE">Kollektivavtalsnivå</label>
-        <label xml:lang="th-TH">ระดับโครงสร้างค่าจ้าง/เงินเดือน</label>
-        <label xml:lang="tr-TR">Ödeme Ölçek Düzeyi</label>
-        <label xml:lang="vi-VN">Cấp độ thang lương</label>
-        <label xml:lang="zh-CN">工资等级级别</label>
-        <label xml:lang="zh-TW">薪級等級</label>
         <label xml:lang="en-US">Pay Scale Level</label>
       </hris-field>
       <hris-field id="attachment-id" visibility="none">
         <label>Attachment</label>
-        <label xml:lang="ar-SA">المرفق</label>
-        <label xml:lang="bg-BG">Приложение</label>
-        <label xml:lang="bs-BS">Lampiran</label>
-        <label xml:lang="bs-ID">Lampiran</label>
-        <label xml:lang="cs-CZ">Příloha</label>
-        <label xml:lang="da-DK">Vedhæftet fil</label>
-        <label xml:lang="de-CH">Anhang</label>
-        <label xml:lang="de-DE">Anhang</label>
-        <label xml:lang="el-GR">Προσάρτημα </label>
-        <label xml:lang="en-GB">Attachment</label>
-        <label xml:lang="es-ES">Archivo adjunto</label>
-        <label xml:lang="es-MX">Archivo adjunto</label>
-        <label xml:lang="fi-FI">Liite</label>
-        <label xml:lang="fr-CA">Pièce jointe</label>
-        <label xml:lang="fr-FR">Pièce jointe</label>
-        <label xml:lang="he-IL">קובץ מצורף</label>
-        <label xml:lang="hi-IN">अनुलग्नक</label>
-        <label xml:lang="hr-HR">Prilog</label>
-        <label xml:lang="hu-HU">Melléklet</label>
-        <label xml:lang="it-IT">Allegato</label>
-        <label xml:lang="ja-JP">添付文書</label>
-        <label xml:lang="ko-KR">첨부파일</label>
-        <label xml:lang="nb-NO">Vedlegg</label>
-        <label xml:lang="nl-NL">Bijlage</label>
-        <label xml:lang="pl-PL">Załącznik</label>
-        <label xml:lang="pt-BR">Anexo</label>
-        <label xml:lang="pt-PT">Anexo</label>
-        <label xml:lang="ro-RO">Anexă</label>
-        <label xml:lang="ru-RU">Вложение</label>
-        <label xml:lang="sk-SK">Príloha</label>
-        <label xml:lang="sl-SI">Priloga</label>
-        <label xml:lang="sr-RS">Prilog</label>
-        <label xml:lang="sv-SE">Bilaga</label>
-        <label xml:lang="th-TH">สิ่งที่แนบ</label>
-        <label xml:lang="tr-TR">Ek</label>
-        <label xml:lang="vi-VN">Phần đính kèm</label>
-        <label xml:lang="zh-CN">附件</label>
-        <label xml:lang="zh-TW">附件</label>
         <label xml:lang="en-US">Attachment</label>
       </hris-field>
       <hris-field max-length="256" id="notice-period-start-date" visibility="none">
@@ -19760,6 +18868,60 @@
       <hris-field max-length="100" id="work-period" visibility="none">
         <label>Work Period</label>
         <label xml:lang="en-US">Work Period</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string13" visibility="view">
+        <label xml:lang="en-US">ADP Emp Type</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string14" visibility="view">
+        <label xml:lang="en-US">ADP Job Location</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string15" visibility="view">
+        <label xml:lang="en-US">ADP Department</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string32" visibility="view">
+        <label xml:lang="en-US">ADP WORK STATE</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string19" visibility="view">
+        <label xml:lang="en-US">IsPaidByWFN</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string17" visibility="view">
+        <label xml:lang="en-US">Benefits Eligibility Class</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string12" visibility="view">
+        <label xml:lang="en-US">ADP Emp Status</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string16" visibility="view">
+        <label xml:lang="en-US">ADP SUI Tax Code</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string18" visibility="view">
+        <label xml:lang="en-US">ADP Business Unit</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string20" visibility="view">
+        <label xml:lang="en-US">ADP FLSA CODE</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string25" visibility="view">
+        <label xml:lang="en-US">ADP TERMINATION RSN</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string26" visibility="view">
+        <label xml:lang="en-US">ADP CANCEL AUT PAY</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string27" visibility="view">
+        <label xml:lang="en-US">ADP ELIGIBLE REHIRE</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string28" visibility="view">
+        <label xml:lang="en-US">ADP REHIRE STS</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string31" visibility="view">
+        <label xml:lang="en-US">ADP ADDRESS LEGAL</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string34" visibility="both">
+        <label xml:lang="en-US">ADP JOB TITLE</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string36" visibility="view">
+        <label xml:lang="en-US">ADP Notification</label>
+      </hris-field>
+      <hris-field max-length="256" id="custom-string24" visibility="view">
+        <label xml:lang="en-US">ADP MANAGEMENT POS</label>
       </hris-field>
     </hris-section>
     <hris-section id="timeOffRelatedFields">
@@ -19861,7 +19023,7 @@
         <label xml:lang="fi-FI">Työaikataulu</label>
         <label xml:lang="fr-CA">Plan de roulement</label>
         <label xml:lang="fr-FR">Horaires de travail</label>
-        <label xml:lang="he-IL">לו"ז עבודה</label>
+        <label xml:lang="he-IL">לו&quot;ז עבודה</label>
         <label xml:lang="hi-IN">कार्य शेड्यूल</label>
         <label xml:lang="hr-HR">Radni raspored</label>
         <label xml:lang="hu-HU">Munkarend</label>
@@ -20021,7 +19183,6 @@
     <label xml:lang="zh-TW">薪酬資訊</label>
     <label xml:lang="en-US">Compensation Information</label>
     <trigger-rule event="onView" rule="COMPA"/>
-    <trigger-rule event="onSave" rule="ADP_Hire_Rehire_YN"/>
     <trigger-rule event="onSave" rule="ADP_PositionUsesTime"/>
     <trigger-rule event="onSave" rule="ADP_email_Notification"/>
     <trigger-rule event="onSave" rule="ADP_BenefitsCode"/>
@@ -20032,22 +19193,11 @@
     <trigger-rule event="onSave" rule="ADP_BADGE"/>
     <trigger-rule event="onSave" rule="ADP_PAYCLASS"/>
     <trigger-rule event="onSave" rule="ADP_SUPERVISORID"/>
-    <trigger-rule event="onSave" rule="ADP_Emp_Status1"/>
-    <trigger-rule event="onSave" rule="ADP_Emp_Type1"/>
-    <trigger-rule event="onSave" rule="ADP_Job_Location"/>
-    <trigger-rule event="onSave" rule="ADP_Department"/>
-    <trigger-rule event="onSave" rule="ADP_Business_Unit"/>
-    <trigger-rule event="onSave" rule="ADP_FLSA_CODE"/>
     <trigger-rule event="onSave" rule="ADP_PAY_FREQ"/>
     <trigger-rule event="onSave" rule="ADP_RATE_TYPE"/>
     <trigger-rule event="onSave" rule="ADP_RATE_AMOUNT"/>
     <trigger-rule event="onSave" rule="ADP_STD_HOURS"/>
     <trigger-rule event="onSave" rule="ADP_MANAGEMENT_POS"/>
-    <trigger-rule event="onSave" rule="ADP_LEGAL_ADDRESS"/>
-    <trigger-rule event="onSave" rule="ADP_ELG_REHIRE"/>
-    <trigger-rule event="onSave" rule="ADP_REHIRE_STATUS"/>
-    <trigger-rule event="onSave" rule="ADP_CACL_AUTO_PAY"/>
-    <trigger-rule event="onSave" rule="ADP_TERMINATION_REASON"/>
     <trigger-rule event="onSave" rule="ADP_Job_Title"/>
     <hris-field id="salary" visibility="none">
       <label>Salary</label>
@@ -20632,7 +19782,7 @@
       <label xml:lang="zh-TW">福利比率</label>
       <label xml:lang="en-US">Benefits Rate</label>
     </hris-field>
-    <hris-field id="compa-ratio" visibility="both" maximumFractionDigits="2">
+    <hris-field id="compa-ratio" visibility="none" maximumFractionDigits="2">
       <label>Compa Ratio</label>
       <label xml:lang="ar-SA">الوضع النسبي</label>
       <label xml:lang="bg-BG">Сравнително съотношение</label>
@@ -21023,16 +20173,13 @@
       <label xml:lang="en-US">Adjustment Amount</label>
     </hris-field>
     <hris-field max-length="256" id="custom-double5" visibility="both">
-      <label xml:lang="en-US">Compa Ratio NEW</label>
+      <label xml:lang="en-US">Compa-Ratio</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string1" visibility="view">
       <label xml:lang="en-US">IsPaidByWFN</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string2" visibility="view">
       <label xml:lang="en-US">PositionUsesTime</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string3" visibility="view">
-      <label xml:lang="en-US">ADP Notification</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string4" visibility="view">
       <label xml:lang="en-US">Benefits Eligibility Class</label>
@@ -21058,65 +20205,17 @@
     <hris-field max-length="256" id="custom-string11" visibility="view">
       <label xml:lang="en-US">SUPERVISORID</label>
     </hris-field>
-    <hris-field max-length="256" id="custom-string12" visibility="view">
-      <label xml:lang="en-US">ADP Emp Status</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string13" visibility="view">
-      <label xml:lang="en-US">ADP Emp Type</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string14" visibility="view">
-      <label xml:lang="en-US">ADP Job Location</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string15" visibility="view">
-      <label xml:lang="en-US">ADP Department</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string16" visibility="view">
-      <label xml:lang="en-US">ADP SUI Tax Code</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string17" visibility="view">
-      <label xml:lang="en-US">ADP Worked State Field</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string18" visibility="view">
-      <label xml:lang="en-US">ADP Business Unit</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string19" visibility="view">
-      <label xml:lang="en-US">ADP FLSA CODE</label>
-    </hris-field>
     <hris-field max-length="256" id="custom-string20" visibility="view">
       <label xml:lang="en-US">ADP PAY FREQ CODE</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string21" visibility="view">
       <label xml:lang="en-US">ADP RATE TYPE</label>
     </hris-field>
-    <hris-field max-length="256" id="custom-double6" visibility="view" maximumFractionDigits="4">
+    <hris-field max-length="256" id="custom-double6" visibility="view" maximumFractionDigits="2">
       <label xml:lang="en-US">ADP RATE AMOUNT</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string23" visibility="view">
       <label xml:lang="en-US">ADP STD HOURS</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string24" visibility="view">
-      <label xml:lang="en-US">ADP MANAGEMENT POS</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string25" visibility="view">
-      <label xml:lang="en-US">ADP TERMINATION RSN</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string26" visibility="view">
-      <label xml:lang="en-US">ADP CANCEL AUT PAY</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string27" visibility="view">
-      <label xml:lang="en-US">ADP ELIGIBLE REHIRE</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string28" visibility="view">
-      <label xml:lang="en-US">ADP REHIRE STS</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string31" visibility="view">
-      <label xml:lang="en-US">ADP ADDRESS LEGAL</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string34" visibility="view">
-      <label xml:lang="en-US">ADP JOB TITLE</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string35" visibility="view">
-      <label xml:lang="en-US">Cust Emp Status</label>
     </hris-field>
   </hris-element>
   <hris-element id="payComponentRecurring">
@@ -22710,6 +21809,9 @@
   </element-permission>
   <dg-filters>
     <permission-group-filter>
+      <hris-element-ref refid="compInfo">
+        <hris-field-ref refid="pay-group"/>
+      </hris-element-ref>
       <hris-element-ref refid="jobInfo">
         <hris-field-ref refid="business-unit"/>
         <hris-field-ref refid="cost-center"/>
@@ -22723,9 +21825,6 @@
         <hris-field-ref refid="company" ref-field="countryOfRegistration"/>
         <hris-field-ref refid="location" ref-field="locationGroup"/>
         <hris-field-ref refid="department" ref-field="name"/>
-      </hris-element-ref>
-      <hris-element-ref refid="compInfo">
-        <hris-field-ref refid="pay-group"/>
       </hris-element-ref>
     </permission-group-filter>
   </dg-filters>
