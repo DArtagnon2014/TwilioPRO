@@ -13439,7 +13439,7 @@
       <label xml:lang="zh-TW">死亡日期</label>
       <label xml:lang="en-US">Date of Death</label>
     </hris-field>
-    <hris-field max-length="256" id="custom-string2" visibility="view">
+    <hris-field max-length="256" id="custom-string2" visibility="both">
       <label xml:lang="en-US">ADP ID</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string3" visibility="view">
@@ -18106,7 +18106,6 @@
     <trigger-rule event="onSave" rule="ADP_Legal_Address"/>
     <trigger-rule event="onSave" rule="ADP_Hire_Rehire_YN"/>
     <trigger-rule event="onSave" rule="ADP_Emp_Type2"/>
-    <trigger-rule event="onSave" rule="ADP_Emp_Status2"/>
     <trigger-rule event="onSave" rule="ADP_Job_Location2"/>
     <trigger-rule event="onSave" rule="ADP_Department2"/>
     <trigger-rule event="onSave" rule="ADP_SUI_Code2"/>
@@ -18869,9 +18868,6 @@
         <label>Work Period</label>
         <label xml:lang="en-US">Work Period</label>
       </hris-field>
-      <hris-field max-length="256" id="custom-string13" visibility="view">
-        <label xml:lang="en-US">ADP Emp Type</label>
-      </hris-field>
       <hris-field max-length="256" id="custom-string14" visibility="view">
         <label xml:lang="en-US">ADP Job Location</label>
       </hris-field>
@@ -19182,23 +19178,20 @@
     <label xml:lang="zh-CN">薪酬信息</label>
     <label xml:lang="zh-TW">薪酬資訊</label>
     <label xml:lang="en-US">Compensation Information</label>
-    <trigger-rule event="onView" rule="COMPA"/>
     <trigger-rule event="onSave" rule="ADP_PositionUsesTime"/>
-    <trigger-rule event="onSave" rule="ADP_email_Notification"/>
-    <trigger-rule event="onSave" rule="ADP_BenefitsCode"/>
-    <trigger-rule event="onSave" rule="ADP_ADMINFLAG"/>
-    <trigger-rule event="onSave" rule="ADP_SUPERVISORFLAG"/>
-    <trigger-rule event="onSave" rule="ADP_TIMEZONE"/>
-    <trigger-rule event="onSave" rule="ADP_TRANSFERTOPAYROLL"/>
-    <trigger-rule event="onSave" rule="ADP_BADGE"/>
-    <trigger-rule event="onSave" rule="ADP_PAYCLASS"/>
-    <trigger-rule event="onSave" rule="ADP_SUPERVISORID"/>
     <trigger-rule event="onSave" rule="ADP_PAY_FREQ"/>
     <trigger-rule event="onSave" rule="ADP_RATE_TYPE"/>
     <trigger-rule event="onSave" rule="ADP_RATE_AMOUNT"/>
     <trigger-rule event="onSave" rule="ADP_STD_HOURS"/>
-    <trigger-rule event="onSave" rule="ADP_MANAGEMENT_POS"/>
-    <trigger-rule event="onSave" rule="ADP_Job_Title"/>
+    <trigger-rule event="onSave" rule="ADP_SUPERVISORID"/>
+    <trigger-rule event="onSave" rule="ADP_PAYCLASS"/>
+    <trigger-rule event="onSave" rule="ADP_BADGE"/>
+    <trigger-rule event="onSave" rule="ADP_TRANSFERTOPAYROLL"/>
+    <trigger-rule event="onSave" rule="ADP_TimeZone"/>
+    <trigger-rule event="onSave" rule="ADP_SUPERVISORFLAG"/>
+    <trigger-rule event="onSave" rule="ADP_ADMINFLAG"/>
+	 <trigger-rule event="onSave" rule="ADP_Emp_Status2"/>
+    <trigger-rule event="onView" rule="COMPA"/>
     <hris-field id="salary" visibility="none">
       <label>Salary</label>
       <label xml:lang="ar-SA">الراتب</label>
@@ -20175,35 +20168,8 @@
     <hris-field max-length="256" id="custom-double5" visibility="both">
       <label xml:lang="en-US">Compa-Ratio</label>
     </hris-field>
-    <hris-field max-length="256" id="custom-string1" visibility="view">
-      <label xml:lang="en-US">IsPaidByWFN</label>
-    </hris-field>
     <hris-field max-length="256" id="custom-string2" visibility="view">
       <label xml:lang="en-US">PositionUsesTime</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string4" visibility="view">
-      <label xml:lang="en-US">Benefits Eligibility Class</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string5" visibility="view">
-      <label xml:lang="en-US">ADMINFLAG</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string6" visibility="view">
-      <label xml:lang="en-US">SUPERVISORFLAG</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string7" visibility="view">
-      <label xml:lang="en-US">TIMEZONE</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string8" visibility="view">
-      <label xml:lang="en-US">TRANSFERTOPAYROLL</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string9" visibility="view">
-      <label xml:lang="en-US">BADGE</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string10" visibility="view">
-      <label xml:lang="en-US">PAYCLASS</label>
-    </hris-field>
-    <hris-field max-length="256" id="custom-string11" visibility="view">
-      <label xml:lang="en-US">SUPERVISORID</label>
     </hris-field>
     <hris-field max-length="256" id="custom-string20" visibility="view">
       <label xml:lang="en-US">ADP PAY FREQ CODE</label>
@@ -20216,6 +20182,30 @@
     </hris-field>
     <hris-field max-length="256" id="custom-string23" visibility="view">
       <label xml:lang="en-US">ADP STD HOURS</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string11" visibility="view">
+      <label xml:lang="en-US">SUPERVISORID</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string10" visibility="view">
+      <label xml:lang="en-US">PAYCLASS</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string9" visibility="view">
+      <label xml:lang="en-US">BADGE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string8" visibility="view">
+      <label xml:lang="en-US">TRANSFERTOPAYROLL</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string7" visibility="view">
+      <label xml:lang="en-US">TIMEZONE</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string6" visibility="view">
+      <label xml:lang="en-US">SUPERVISORFLAG</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string5" visibility="view">
+      <label xml:lang="en-US">ADMINFLAG</label>
+    </hris-field>
+    <hris-field max-length="256" id="custom-string12" visibility="view">
+      <label xml:lang="en-US">ADP Emp Type</label>
     </hris-field>
   </hris-element>
   <hris-element id="payComponentRecurring">
